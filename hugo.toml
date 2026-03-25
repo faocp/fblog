@@ -4,7 +4,7 @@ title = 'fblog'
 
 [params]
   author      = "faocp"
-  description = "a personal blog"
+  description = "what's on my mind lately?"
 
 [[menus.main]]
   name   = "posts"
@@ -12,9 +12,14 @@ title = 'fblog'
   weight = 1
 
 [[menus.main]]
+  name   = "links"
+  url    = "/links/"
+  weight = 2
+
+[[menus.main]]
   name   = "about"
   url    = "/about/"
-  weight = 2
+  weight = 3
 
 [markup.highlight]
   style     = "monokai"
