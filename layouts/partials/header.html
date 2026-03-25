@@ -1,13 +1,13 @@
 <header>
   <div class="ascii-art" aria-hidden="true">
-    <pre>
+    <a href="{{ "/" | absURL }}" aria-label="home"><pre>
 ╭────────────────────────────────────────╮
 │ ● ○ ○                              <span class="star">·</span>   │
 ├────────────────────────────────────────┤
 │                                        │
 │     <span class="star">✦</span>  fffelipe's world wide web  <span class="star">*</span>    │
 │                                        │
-╰────────────────────────────────────────╯</pre>
+╰────────────────────────────────────────╯</pre></a>
   </div>
   <nav>
     <a href="{{ "/" | relURL }}" {{ if .IsHome }}class="active"{{ end }}>~</a>
