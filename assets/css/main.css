@@ -255,6 +255,7 @@ footer {
   padding-top: 1.5rem;
   font-size: 0.78rem;
   color: var(--muted);
+  text-align: center;
 }
 footer a { color: var(--muted); }
 footer a:hover { color: var(--accent); }

@@ -5,8 +5,6 @@ draft      = false
 categories = ["meta"]
 +++
 
-first post. the blog is live.
+This is the first post on the 2.0 version of fffelipe.com
 
 built with [hugo](https://gohugo.io/), a custom theme, and a lot of whitespace.
-
-more to come.
