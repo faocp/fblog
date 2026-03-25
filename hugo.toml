@@ -21,6 +21,9 @@ title = "fffelipe's world wide web"
   url    = "/about/"
   weight = 3
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [markup.highlight]
   style     = "monokai"
   noClasses = true
