@@ -1,6 +1,6 @@
 baseURL = 'https://faocp.github.io/fblog/'
 languageCode = 'en-us'
-title = 'fblog'
+title = "fffelipe's world wide web"
 
 [params]
   author      = "faocp"
