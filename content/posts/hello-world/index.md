@@ -1,6 +1,6 @@
 +++
 title      = "hello, world"
-date       = "2026-03-24"
+date       = "2026-03-23"
 draft      = false
 categories = ["meta"]
 +++

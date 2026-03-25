@@ -11,4 +11,4 @@ while AI has been the big thing for the past 5 or so years, I'm already seeing t
 
 either way, this is my attempt at down-to-earth, organic interaction. I wanna use this blog for throwaway posts, maybe things I find interesting and perhaps even some deeper thoughts.
 
-unrelated to this first post but maybe in the same motif: i've watched "train dreams" today, a beautifully sad, beautifully shot movie. made me realize, as all good movies, that meaning in everything, and often beauty is the meaning.
+unrelated to this first post but maybe in the same motif: i've watched "train dreams" today, a beautifully sad, beautifully shot movie. made me realize, as all good movies, that there is meaning in everything, and often beauty is the meaning.
