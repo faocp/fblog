@@ -1,0 +1,27 @@
+{{ define "main" }}
+  {{ with .Site.Params.description }}<p class="site-desc">{{ . }}</p>{{ end }}
+
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $featured := first 5 $posts }}
+  {{ if $featured }}
+  <section>
+    <h2>recent</h2>
+    <ul class="post-list">
+      {{ range $featured }}
+      <li>
+        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ with .Params.categories }}
+        <span class="cats">
+          {{ range . }}<span class="cat">{{ . }}</span>{{ end }}
+        </span>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ if gt (len $posts) 5 }}
+    <p><a href="/posts/">all posts →</a></p>
+    {{ end }}
+  </section>
+  {{ end }}
+{{ end }}

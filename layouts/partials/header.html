@@ -1,0 +1,32 @@
+<header>
+  <div class="ascii-art" aria-hidden="true">
+    <pre>
+ ╭─────────────────────╮
+ │   * fblog *         │
+ │   felipe's corner   │
+ ╰─────────────────────╯</pre>
+  </div>
+  <nav>
+    <a href="{{ "/" | relURL }}" {{ if .IsHome }}class="active"{{ end }}>~</a>
+    {{ range .Site.Menus.main }}
+    <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+    <button id="theme-toggle" aria-label="toggle theme" title="toggle theme">[ ]</button>
+  </nav>
+</header>
+<script>
+  (function() {
+    const btn = document.getElementById('theme-toggle');
+    function update() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = dark ? '[☀]' : '[☾]';
+    }
+    update();
+    btn.addEventListener('click', function() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+      localStorage.setItem('theme', dark ? 'light' : 'dark');
+      update();
+    });
+  })();
+</script>

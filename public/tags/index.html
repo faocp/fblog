@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tags | fblog</title>
+<meta name="description" content="a personal blog">
+
+<link rel="stylesheet" href="/fblog/css/main.min.css">
+<script>
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+</head>
+<body>
+  <header>
+  <div class="ascii-art" aria-hidden="true">
+    <pre>
+ ╭─────────────────────╮
+ │   * fblog *         │
+ │   felipe's corner   │
+ ╰─────────────────────╯</pre>
+  </div>
+  <nav>
+    <a href="/" >~</a>
+    
+    <a href="/fblog/posts/" >posts</a>
+    
+    <a href="/fblog/about/" >about</a>
+    
+    <button id="theme-toggle" aria-label="toggle theme" title="toggle theme">[ ]</button>
+  </nav>
+</header>
+<script>
+  (function() {
+    const btn = document.getElementById('theme-toggle');
+    function update() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = dark ? '[☀]' : '[☾]';
+    }
+    update();
+    btn.addEventListener('click', function() {
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+      localStorage.setItem('theme', dark ? 'light' : 'dark');
+      update();
+    });
+  })();
+</script>
+
+  <main>
+    
+  <h1>Tags</h1>
+  
+  <ul class="post-list">
+    
+  </ul>
+
+  </main>
+  <footer>
+  <hr>
+  <p>
+    <a href="/">fblog</a> ·
+    <a href="/index.xml">rss</a> ·
+    built with <a href="https://gohugo.io" target="_blank" rel="noopener">hugo</a>
+  </p>
+</footer>
+
+</body>
+</html>
