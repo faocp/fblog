@@ -17,6 +17,6 @@
   </article>
   <nav class="post-nav">
     {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
-    {{ with .NextInSection }}<a href="{{ .RelPermalink }}" style="margin-left:auto">{{ .Title }} →</a>{{ end }}
+    {{ with .NextInSection }}<a class="post-nav-next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
   </nav>
 {{ end }}
