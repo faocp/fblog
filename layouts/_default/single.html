@@ -7,7 +7,7 @@
         · {{ .WordCount }} words
         {{ with .Params.categories }}
         ·
-        {{ range . }}<span class="cat">{{ . }}</span>{{ end }}
+        {{ range . }}<a class="cat" href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}
         {{ end }}
       </p>
     </header>
