@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-fblog is a personal blog built with [Hugo](https://gohugo.io/). It uses a fully custom theme (no external theme dependency) for maximum control over the design. The aesthetic is minimalist and terminal-inspired, modeled after [nelson.cloud](https://nelson.cloud/).
+fblog is a personal blog built with [Hugo](https://gohugo.io/). It uses a fully custom theme (no external theme dependency) for maximum control over the design. The aesthetic is minimalist and terminal-inspired.
 
 Deployed to GitHub Pages at `github.com/faocp/fblog`.
 
@@ -53,3 +53,11 @@ archetypes/        # Front matter templates for hugo new content
 ## Deployment
 
 Build with `hugo` and push `public/` to the `gh-pages` branch, or automate via a GitHub Actions workflow at `.github/workflows/deploy.yml`.
+
+## Skills (Slash Commands)
+
+Custom skills live in `.claude/skills/` and are available as slash commands in Claude Code.
+
+| Command   | Description                                                                 |
+|-----------|-----------------------------------------------------------------------------|
+| `/deploy` | Push current branch to GitHub and merge into main. Handles uncommitted changes, PR creation, and branch cleanup. |
