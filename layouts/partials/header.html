@@ -14,11 +14,28 @@
     {{ range .Site.Menus.main }}
     <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }}>{{ .Name }}</a>
     {{ end }}
+    <button id="reader-toggle" aria-label="toggle reader mode" title="toggle reader mode"></button>
     <button id="theme-toggle" aria-label="toggle theme" title="toggle theme"></button>
   </nav>
 </header>
 <script>
   (function() {
+    // reader mode toggle
+    var readerBtn = document.getElementById('reader-toggle');
+    var bookSVG = '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';
+    var termSVG = '<svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>';
+    function updateReader() {
+      var on = document.documentElement.getAttribute('data-reader') === 'on';
+      readerBtn.innerHTML = on ? termSVG : bookSVG;
+    }
+    updateReader();
+    readerBtn.addEventListener('click', function() {
+      var on = document.documentElement.getAttribute('data-reader') === 'on';
+      document.documentElement.setAttribute('data-reader', on ? 'off' : 'on');
+      localStorage.setItem('reader', on ? 'off' : 'on');
+      updateReader();
+    });
+
     // theme toggle
     var btn = document.getElementById('theme-toggle');
     var moonSVG = '<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
