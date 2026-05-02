@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <article class="learning-single">
+    <p class="learning-back-link"><a href="{{ .CurrentSection.RelPermalink }}">← all flashcards</a></p>
+    <header class="post-header">
+      <div class="flashcard-kicker">
+        {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
+        {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
+      </div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.front }}<div class="flashcard-front-text">{{ . | markdownify }}</div>{{ end }}
+    </header>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

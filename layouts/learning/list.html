@@ -1,0 +1,54 @@
+{{ define "main" }}
+  <section class="learning-page">
+    <header class="learning-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}<div class="page-content">{{ . }}</div>{{ end }}
+      <p class="learning-count">{{ len .Pages }} git flashcards · click a card to reveal details</p>
+    </header>
+
+    <div class="flashcard-grid" aria-label="git flashcards">
+      {{ range .Pages.ByWeight }}
+      <article class="flashcard" tabindex="0" role="button" aria-pressed="false">
+        <div class="flashcard-inner">
+          <section class="flashcard-face flashcard-front" aria-label="front of flashcard">
+            <div class="flashcard-kicker">
+              {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
+              {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
+            </div>
+            <h2>{{ .Title }}</h2>
+            {{ with .Params.front }}<div class="flashcard-front-text">{{ . | markdownify }}</div>{{ end }}
+            <span class="flashcard-hint">click to flip ↻</span>
+          </section>
+
+          <section class="flashcard-face flashcard-back" aria-label="back of flashcard">
+            <div class="flashcard-kicker"><span>details / example</span></div>
+            <div class="flashcard-content">
+              {{ .Content }}
+            </div>
+            <span class="flashcard-hint">click to flip back</span>
+          </section>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var cards = document.querySelectorAll('.flashcard');
+      function flip(card) {
+        var flipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+      }
+      cards.forEach(function(card) {
+        card.addEventListener('click', function() { flip(card); });
+        card.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            flip(card);
+          }
+        });
+      });
+    })();
+  </script>
+{{ end }}
