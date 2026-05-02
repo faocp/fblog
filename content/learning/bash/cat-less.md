@@ -1,6 +1,6 @@
 +++
 title = "cat and less"
-front = "`cat` prints a file; `less` opens a scrollable view of a file."
+front = "`cat` concatenates and prints file contents to the terminal; `less` opens a paged, scrollable view of a file."
 category = "commands"
 difficulty = "beginner"
 weight = 80

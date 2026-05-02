@@ -6,7 +6,7 @@ difficulty = "beginner"
 weight = 260
 +++
 
-Use `is None` instead of `== None`.
+Use `is None` instead of `== None`. `None` is a singleton — only one `None` object exists in a Python program — so identity (`is`) is the canonical and override-proof check.
 
 Example:
 

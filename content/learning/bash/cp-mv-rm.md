@@ -14,4 +14,4 @@ mv draft.md post.md
 rm old.txt
 ```
 
-Be careful with `rm`: deleted files may not go to the trash. Double-check paths before using recursive removal like `rm -r`.
+Be careful with `rm`: it does not send files to the trash — they are gone immediately. Double-check paths before using recursive removal like `rm -r`.

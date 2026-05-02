@@ -1,6 +1,6 @@
 +++
 title = "Commit"
-front = "A commit is a saved snapshot of staged changes, with a message explaining why."
+front = "A commit is a saved snapshot of your project's tracked files, built from what you staged, with a message explaining why."
 category = "basics"
 difficulty = "beginner"
 weight = 40

@@ -1,6 +1,6 @@
 +++
 title = "Globbing"
-front = "Globs are wildcard patterns Bash expands into matching filenames."
+front = "Globs are wildcard patterns Bash expands into matching filenames before running the command."
 category = "files"
 difficulty = "beginner"
 weight = 110

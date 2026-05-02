@@ -1,6 +1,6 @@
 +++
 title = "Environment variables"
-front = "Environment variables are variables inherited by child processes."
+front = "Environment variables are shell variables marked with `export`, so child processes inherit them."
 category = "scripting"
 difficulty = "intermediate"
 weight = 180

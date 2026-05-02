@@ -1,6 +1,6 @@
 +++
 title = "Branch"
-front = "A branch is a movable pointer to a line of commits."
+front = "A branch is a movable pointer to a commit, marking the tip of a line of work."
 category = "branching"
 difficulty = "beginner"
 weight = 80

@@ -1,6 +1,6 @@
 +++
 title = "Pipes"
-front = "A pipe sends the output of one command into the input of another command."
+front = "A pipe (`|`) connects one command's standard output to the next command's standard input."
 category = "io"
 difficulty = "beginner"
 weight = 130
