@@ -402,8 +402,8 @@ body.section-learning { max-width: 980px; }
   margin-bottom: 0.5rem;
 }
 
-.flashcard-front::before { content: "┌─ question"; }
-.flashcard-back::before  { content: "┌─ answer"; }
+.flashcard-front::before { content: "┌─ concept"; }
+.flashcard-back::before  { content: "┌─ details"; }
 
 .flashcard-back { transform: rotateY(180deg); }
 
