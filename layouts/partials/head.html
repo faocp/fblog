@@ -25,11 +25,16 @@
 {{/* Inline theme detection — runs before paint to avoid flash */}}
 <script>
   (function() {
-    var saved = localStorage.getItem('theme');
+    var savedTheme = null;
+    var savedReader = null;
+    try {
+      savedTheme = localStorage.getItem('theme');
+      savedReader = localStorage.getItem('reader');
+    } catch (e) {}
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = saved || (prefersDark ? 'dark' : 'light');
+    var theme = savedTheme || (prefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', theme);
-    if (localStorage.getItem('reader') === 'on') {
+    if (savedReader === 'on') {
       document.documentElement.setAttribute('data-reader', 'on');
     }
   })();

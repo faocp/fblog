@@ -22,7 +22,7 @@
       {{ end }}
     </ul>
     {{ if gt (len $posts) 5 }}
-    <p><a class="all-posts-link" href="/posts/">all posts →</a></p>
+    <p><a class="all-posts-link" href="{{ "posts/" | relURL }}">all posts →</a></p>
     {{ end }}
   </section>
   {{ end }}

@@ -12,7 +12,8 @@
   <nav>
     <a href="{{ "/" | relURL }}" {{ if .IsHome }}class="active"{{ end }}>~</a>
     {{ range .Site.Menus.main }}
-    <a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }}>{{ .Name }}</a>
+    {{ $url := .URL | relURL }}
+    <a href="{{ $url }}" {{ if or (eq $.RelPermalink $url) (and (ne $url "/") (hasPrefix $.RelPermalink $url)) }}class="active"{{ end }}>{{ .Name }}</a>
     {{ end }}
     <button id="reader-toggle" aria-label="toggle reader mode" title="toggle reader mode"></button>
     <button id="theme-toggle" aria-label="toggle theme" title="toggle theme"></button>
@@ -32,7 +33,7 @@
     readerBtn.addEventListener('click', function() {
       var on = document.documentElement.getAttribute('data-reader') === 'on';
       document.documentElement.setAttribute('data-reader', on ? 'off' : 'on');
-      localStorage.setItem('reader', on ? 'off' : 'on');
+      try { localStorage.setItem('reader', on ? 'off' : 'on'); } catch (e) {}
       updateReader();
     });
 
@@ -48,7 +49,7 @@
     btn.addEventListener('click', function() {
       var dark = document.documentElement.getAttribute('data-theme') === 'dark';
       document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
-      localStorage.setItem('theme', dark ? 'light' : 'dark');
+      try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
       updateToggle();
     });
 
@@ -62,6 +63,9 @@
         }
       }
     }
-    setInterval(twinkle, 900);
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+      setInterval(twinkle, 900);
+    }
   })();
 </script>

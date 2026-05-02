@@ -8,7 +8,7 @@
         <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         {{ with .Params.categories }}
-        <span class="cats">{{ range . }}<a class="cat" href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}</span>
+        <span class="cats">{{ range . }}<a class="cat" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}</span>
         {{ end }}
       </div>
     </li>
