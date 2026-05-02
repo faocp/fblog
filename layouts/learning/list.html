@@ -1,13 +1,34 @@
 {{ define "main" }}
+  {{ $cards := .RegularPages.ByWeight }}
+  {{ $sections := .Sections.ByWeight }}
+
   <section class="learning-page">
     <header class="learning-header">
       <h1>{{ .Title }}</h1>
       {{ with .Content }}<div class="page-content">{{ . }}</div>{{ end }}
-      <p class="learning-count">{{ len .Pages }} git flashcards · click a card to reveal details</p>
+      {{ if $cards }}
+      <p class="learning-count">{{ len $cards }} flashcards · click a card to reveal details</p>
+      {{ else if $sections }}
+      <p class="learning-count">{{ len $sections }} learning modules</p>
+      {{ end }}
     </header>
 
-    <div class="flashcard-grid" aria-label="git flashcards">
-      {{ range .Pages.ByWeight }}
+    {{ if $sections }}
+    <div class="learning-module-grid" aria-label="learning modules">
+      {{ range $sections }}
+      <a class="learning-module" href="{{ .RelPermalink }}">
+        <span class="learning-module-path">{{ .RelPermalink }}</span>
+        <h2>{{ .Title }}</h2>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        <span class="learning-module-meta">{{ len .RegularPages }} flashcards →</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if $cards }}
+    <div class="flashcard-grid" aria-label="{{ .Title }} flashcards">
+      {{ range $cards }}
       <article class="flashcard" tabindex="0" role="button" aria-pressed="false">
         <div class="flashcard-inner">
           <section class="flashcard-face flashcard-front" aria-label="front of flashcard">
@@ -31,8 +52,10 @@
       </article>
       {{ end }}
     </div>
+    {{ end }}
   </section>
 
+  {{ if $cards }}
   <script>
     (function() {
       var cards = document.querySelectorAll('.flashcard');
@@ -51,4 +74,5 @@
       });
     })();
   </script>
+  {{ end }}
 {{ end }}

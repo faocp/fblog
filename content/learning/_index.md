@@ -1,6 +1,6 @@
 +++
 title = "learning"
-description = "Flashcards for memorizing Git concepts."
+description = "Flashcards for memorizing technical concepts."
 +++
 
-small flashcards for learning git fundamentals. start with the front of each card, then flip it for a practical explanation or real-world example.
+small flashcard sets for learning technical fundamentals. pick a module, start with the front of each card, then flip it for a practical explanation or real-world example.

@@ -292,6 +292,62 @@ body.section-learning { max-width: 980px; }
   margin-top: 1rem;
 }
 
+.learning-module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.learning-module {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.learning-module:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.learning-module::before {
+  color: var(--muted);
+  content: "┌─ module";
+  display: block;
+  font-size: 0.7rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.learning-module-path,
+.learning-module-meta {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.learning-module h2 {
+  color: var(--fg);
+  font-size: 1.05rem;
+  margin: 0.75rem 0 0.5rem;
+  text-transform: none;
+}
+
+.learning-module p {
+  color: var(--fg-secondary);
+  margin: 0;
+}
+
+.learning-module-meta {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
 .flashcard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
