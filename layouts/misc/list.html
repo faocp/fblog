@@ -1,113 +1,154 @@
-{{ define "main" }}
-  {{ $cards := .RegularPages.ByWeight }}
-  {{ $sections := .Sections.ByWeight }}
+{{ define "main" }} {{ $cards := .RegularPages.ByWeight }} {{ $sections :=
+.Sections.ByWeight }}
 
-  <section class="learning-page">
+<section class="learning-page">
     <header class="learning-header">
-      <h1>{{ .Title }}</h1>
-      {{ with .Content }}<div class="page-content">{{ . }}</div>{{ end }}
-      {{ if $cards }}
-      <p class="learning-count">{{ len $cards }} flashcards · select reveal or click a card to see details</p>
-      {{ else if $sections }}
-      <p class="learning-count">{{ len $sections }} learning modules</p>
-      {{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}
+        <div class="page-content">{{ . }}</div>
+        {{ end }} {{ if $cards }}
+        <p class="learning-count">
+            {{ len $cards }} flashcards · select reveal or click a card to see
+            details
+        </p>
+        {{ else if $sections }}
+        <p class="learning-count">{{ len $sections }} learning modules</p>
+        {{ end }}
     </header>
 
     {{ if $sections }}
     <div class="learning-module-grid" aria-label="learning modules">
-      {{ range $sections }}
-      <a class="learning-module" href="{{ .RelPermalink }}">
-        <span class="learning-module-path">{{ .RelPermalink }}</span>
-        <h2>{{ .Title }}</h2>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
-        <span class="learning-module-meta">{{ len .RegularPages }} flashcards →</span>
-      </a>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    {{ if $cards }}
-    <div class="flashcard-grid" aria-label="{{ .Title }} flashcards">
-      {{ range $cards }}
-      <article class="flashcard" aria-label="{{ .Title }}">
-        <div class="flashcard-inner">
-          <section class="flashcard-face flashcard-front" data-card-face="front" aria-label="front of flashcard">
-            <div class="flashcard-kicker">
-              {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
-              {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
-            </div>
+        {{ range $sections }}
+        <a class="learning-module" href="{{ .RelPermalink }}">
+            <span class="learning-module-path">{{ .RelPermalink }}</span>
             <h2>{{ .Title }}</h2>
-            {{ with .Params.front }}<div class="flashcard-front-text">{{ . | markdownify }}</div>{{ end }}
-            <button class="flashcard-toggle" type="button" aria-pressed="false">reveal details ↻</button>
-          </section>
+            {{ with .Description }}
+            <p>{{ . }}</p>
+            {{ end }} {{ if .Sections }}
+            <span class="learning-module-meta"
+                >{{ len .Sections }} modules →</span
+            >
+            {{ else }}
+            <span class="learning-module-meta"
+                >{{ len .RegularPages }} flashcards →</span
+            >
+            {{ end }}
+        </a>
+        {{ end }}
+    </div>
+    {{ end }} {{ if $cards }}
+    <div class="flashcard-grid" aria-label="{{ .Title }} flashcards">
+        {{ range $cards }}
+        <article class="flashcard" aria-label="{{ .Title }}">
+            <div class="flashcard-inner">
+                <section
+                    class="flashcard-face flashcard-front"
+                    data-card-face="front"
+                    aria-label="front of flashcard"
+                >
+                    <div class="flashcard-kicker">
+                        {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
+                        {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end
+                        }}
+                    </div>
+                    <h2>{{ .Title }}</h2>
+                    {{ with .Params.front }}
+                    <div class="flashcard-front-text">
+                        {{ . | markdownify }}
+                    </div>
+                    {{ end }}
+                    <button
+                        class="flashcard-toggle"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        reveal details ↻
+                    </button>
+                </section>
 
-          <section class="flashcard-face flashcard-back" data-card-face="back" aria-label="back of flashcard" aria-hidden="true" inert>
-            <div class="flashcard-kicker"><span>details / example</span></div>
-            <div class="flashcard-content">
-              {{ .Content }}
+                <section
+                    class="flashcard-face flashcard-back"
+                    data-card-face="back"
+                    aria-label="back of flashcard"
+                    aria-hidden="true"
+                    inert
+                >
+                    <div class="flashcard-kicker">
+                        <span>details / example</span>
+                    </div>
+                    <div class="flashcard-content">{{ .Content }}</div>
+                    <button
+                        class="flashcard-toggle"
+                        type="button"
+                        aria-pressed="true"
+                    >
+                        hide details ↻
+                    </button>
+                </section>
             </div>
-            <button class="flashcard-toggle" type="button" aria-pressed="true">hide details ↻</button>
-          </section>
-        </div>
-      </article>
-      {{ end }}
+        </article>
+        {{ end }}
     </div>
     {{ end }}
-  </section>
+</section>
 
-  {{ if $cards }}
-  <script>
-    (function() {
-      var cards = document.querySelectorAll('.flashcard');
-      var interactiveSelector = 'a, button, input, textarea, select, summary, [contenteditable="true"]';
+{{ if $cards }}
+<script>
+    (function () {
+        var cards = document.querySelectorAll(".flashcard");
+        var interactiveSelector =
+            'a, button, input, textarea, select, summary, [contenteditable="true"]';
 
-      function setFaceHidden(face, hidden) {
-        face.setAttribute('aria-hidden', hidden ? 'true' : 'false');
-        if (hidden) {
-          face.setAttribute('inert', '');
-        } else {
-          face.removeAttribute('inert');
-        }
-      }
-
-      function setFlipped(card, flipped, moveFocus) {
-        var front = card.querySelector('[data-card-face="front"]');
-        var back = card.querySelector('[data-card-face="back"]');
-        var buttons = card.querySelectorAll('.flashcard-toggle');
-        card.classList.toggle('is-flipped', flipped);
-        setFaceHidden(front, flipped);
-        setFaceHidden(back, !flipped);
-
-        buttons.forEach(function(button) {
-          button.setAttribute('aria-pressed', flipped ? 'true' : 'false');
-        });
-
-        if (moveFocus) {
-          (flipped ? back : front).querySelector('.flashcard-toggle').focus();
-        }
-      }
-
-      function flip(card, moveFocus) {
-        setFlipped(card, !card.classList.contains('is-flipped'), moveFocus);
-      }
-
-      cards.forEach(function(card) {
-        card.querySelectorAll('.flashcard-toggle').forEach(function(button) {
-          button.addEventListener('click', function(event) {
-            event.stopPropagation();
-            flip(card, true);
-          });
-        });
-
-        card.querySelectorAll('.flashcard-face').forEach(function(face) {
-          face.addEventListener('click', function(event) {
-            if (!event.target.closest(interactiveSelector)) {
-              flip(card, false);
+        function setFaceHidden(face, hidden) {
+            face.setAttribute("aria-hidden", hidden ? "true" : "false");
+            if (hidden) {
+                face.setAttribute("inert", "");
+            } else {
+                face.removeAttribute("inert");
             }
-          });
+        }
+
+        function setFlipped(card, flipped, moveFocus) {
+            var front = card.querySelector('[data-card-face="front"]');
+            var back = card.querySelector('[data-card-face="back"]');
+            var buttons = card.querySelectorAll(".flashcard-toggle");
+            card.classList.toggle("is-flipped", flipped);
+            setFaceHidden(front, flipped);
+            setFaceHidden(back, !flipped);
+
+            buttons.forEach(function (button) {
+                button.setAttribute("aria-pressed", flipped ? "true" : "false");
+            });
+
+            if (moveFocus) {
+                (flipped ? back : front)
+                    .querySelector(".flashcard-toggle")
+                    .focus();
+            }
+        }
+
+        function flip(card, moveFocus) {
+            setFlipped(card, !card.classList.contains("is-flipped"), moveFocus);
+        }
+
+        cards.forEach(function (card) {
+            card.querySelectorAll(".flashcard-toggle").forEach(
+                function (button) {
+                    button.addEventListener("click", function (event) {
+                        event.stopPropagation();
+                        flip(card, true);
+                    });
+                },
+            );
+
+            card.querySelectorAll(".flashcard-face").forEach(function (face) {
+                face.addEventListener("click", function (event) {
+                    if (!event.target.closest(interactiveSelector)) {
+                        flip(card, false);
+                    }
+                });
+            });
         });
-      });
     })();
-  </script>
-  {{ end }}
-{{ end }}
+</script>
+{{ end }} {{ end }}
