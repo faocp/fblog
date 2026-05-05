@@ -5,3 +5,6 @@ public/
 .claude/settings.local.json
 .claude/skills/
 CLAUDE.md
+
+# Local drafts
+/git-cards.tsx
