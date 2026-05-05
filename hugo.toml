@@ -4,7 +4,12 @@ title = "fffelipe's world wide web"
 
 [params]
   author      = "faocp"
-  description = "what's on my mind lately?"
+  description = "felipe — writing about tech, attention, and whatever else won't leave my head."
+  currently   = [
+    "reading: anything that isn't a feed",
+    "tinkering: this blog, some flashcards, a camera",
+    "thinking about: what gets lost when obscurity disappears",
+  ]
 
 [[menus.main]]
   name   = "posts"
@@ -12,8 +17,8 @@ title = "fffelipe's world wide web"
   weight = 1
 
 [[menus.main]]
-  name   = "learning"
-  url    = "/learning/"
+  name   = "misc"
+  url    = "/misc/"
   weight = 2
 
 [[menus.main]]
