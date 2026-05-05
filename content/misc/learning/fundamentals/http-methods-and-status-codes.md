@@ -3,7 +3,7 @@ title = "HTTP Methods & Status Codes"
 front = "HTTP verbs declare intent; status codes signal the result."
 category = "network"
 difficulty = "beginner"
-weight = 110
+weight = 100
 +++
 
 ```text

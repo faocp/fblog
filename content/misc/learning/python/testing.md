@@ -1,16 +1,31 @@
 +++
-title = "Testing"
-front = "Tests are code that checks whether your code behaves as expected."
-category = "tooling"
+title = "Test with pytest"
+front = "The standard Python testing framework. Tests are functions starting with `test_` in files named `test_*.py`."
+category = "workflows"
 difficulty = "intermediate"
-weight = 320
+weight = 280
 +++
 
-Example:
+```python
+# test_auth.py
+from auth import validate_email
 
-```py
-def test_add():
-    assert add(2, 3) == 5
+def test_valid_email():
+    assert validate_email("a@b.com")
+
+def test_rejects_missing_at():
+    assert not validate_email("invalid")
+
+# parametrize for many cases
+import pytest
+
+@pytest.mark.parametrize("email", ["a@b.com", "x@y.io"])
+def test_various_valid(email):
+    assert validate_email(email)
+
+# run
+uv run pytest -v
+uv run pytest tests/test_auth.py::test_valid_email
 ```
 
-Real-world example: tests protect you when refactoring, because they reveal when a change accidentally breaks existing behavior.
+Test what's likely to break, not implementation details. Run with `-v` for verbose output, `-k name` to filter by test name, `-x` to stop at first failure.

@@ -3,7 +3,7 @@ title = "Pull"
 front = "Fetches remote changes and merges them into your branch."
 category = "remote"
 difficulty = "beginner"
-weight = 220
+weight = 130
 +++
 
 ```sh

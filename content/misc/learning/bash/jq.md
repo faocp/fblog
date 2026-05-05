@@ -2,8 +2,8 @@
 title = "jq"
 front = "Like sed/awk for JSON. Essential for working with APIs and structured logs."
 category = "utilities"
-difficulty = "intermediate"
-weight = 350
+difficulty = "beginner"
+weight = 210
 +++
 
 ```sh

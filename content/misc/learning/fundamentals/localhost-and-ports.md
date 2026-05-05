@@ -3,7 +3,7 @@ title = "localhost & Ports"
 front = "localhost (127.0.0.1) is your own machine; ports identify which program receives the connection."
 category = "network"
 difficulty = "beginner"
-weight = 100
+weight = 90
 +++
 
 ```sh

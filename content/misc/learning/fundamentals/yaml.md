@@ -3,7 +3,7 @@ title = "YAML"
 front = "Human-friendly config format used heavily in DevOps tools (Docker Compose, Kubernetes, GitHub Actions)."
 category = "data"
 difficulty = "beginner"
-weight = 160
+weight = 140
 +++
 
 ```yaml

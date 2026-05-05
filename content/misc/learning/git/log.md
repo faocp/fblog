@@ -10,4 +10,4 @@ weight = 50
 git log --oneline --graph --decorate
 ```
 
-Find when a bug was introduced or understand how a file evolved. The flags above give a compact, readable view; alias them in `~/.gitconfig` so you don't retype.
+Find when a bug was introduced or understand how a file evolved. The flags above give a compact, readable view.

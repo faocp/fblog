@@ -3,7 +3,7 @@ title = "Code Review Iteration"
 front = "Push follow-up changes in response to PR review comments. GitHub will automatically update the PR each time you push."
 category = "workflows"
 difficulty = "intermediate"
-weight = 420
+weight = 230
 +++
 
 ```sh

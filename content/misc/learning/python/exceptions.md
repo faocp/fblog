@@ -1,18 +1,22 @@
 +++
-title = "Exceptions"
-front = "An exception is an error or unusual event that interrupts normal program flow."
-category = "errors"
+title = "Error Handling"
+front = "try/except catches exceptions; handle specific ones, not bare `except`."
+category = "utilities"
 difficulty = "beginner"
-weight = 210
+weight = 200
 +++
 
-Example:
-
-```py
+```python
 try:
-    number = int(text)
-except ValueError:
-    number = 0
+    data = json.loads(raw)
+except json.JSONDecodeError as e:
+    print(f"Bad JSON: {e}")
+    data = {}
+except Exception as e:
+    logger.exception("Unexpected error")
+    raise
+finally:
+    cleanup()
 ```
 
-Real-world example: handle invalid user input, missing files, or failed network requests without crashing the whole program.
+Catch specific exceptions when you can recover. Bare `except:` hides bugs. Use `logger.exception` to capture the full traceback.

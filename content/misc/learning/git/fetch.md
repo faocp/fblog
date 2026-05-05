@@ -3,7 +3,7 @@ title = "Fetch"
 front = "Downloads remote changes without touching your working branch."
 category = "remote"
 difficulty = "beginner"
-weight = 230
+weight = 140
 +++
 
 ```sh

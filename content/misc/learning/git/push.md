@@ -3,7 +3,7 @@ title = "Push"
 front = "Sends your local commits to a remote."
 category = "remote"
 difficulty = "beginner"
-weight = 210
+weight = 120
 +++
 
 ```sh

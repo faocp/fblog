@@ -1,9 +1,9 @@
 +++
 title = "Sync Branch with Main"
-front = "Bring the latest changes from main into your in-progress feature branch — run every day or two so your PR doesn't drift behind."
+front = "Bring the latest changes from main into your in-progress feature branch. Run this every day or two so your PR doesn't drift behind and accumulate conflicts."
 category = "workflows"
 difficulty = "intermediate"
-weight = 410
+weight = 220
 +++
 
 ```sh

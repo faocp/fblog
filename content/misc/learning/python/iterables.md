@@ -1,18 +1,23 @@
 +++
-title = "Iterables"
-front = "An iterable is anything Python can loop over."
-category = "patterns"
-difficulty = "intermediate"
-weight = 290
+title = "Iterating Patterns"
+front = "enumerate, zip, and dict.items() cover most iteration needs."
+category = "data-structures"
+difficulty = "beginner"
+weight = 110
 +++
 
-Lists, strings, dictionaries, sets, tuples, files, and generators are iterable.
+```python
+names = ["Ana", "Bob", "Cy"]
+ages = [30, 25, 28]
 
-Example:
+for i, name in enumerate(names):
+    print(i, name)
 
-```py
-for character in "hello":
-    print(character)
+for name, age in zip(names, ages):
+    print(name, age)
+
+for k, v in config.items():
+    print(k, v)
 ```
 
-Real-world example: many Python tools accept any iterable, making functions flexible without requiring a specific collection type.
+These three handle 90% of iteration patterns. `zip` stops at the shortest iterable.

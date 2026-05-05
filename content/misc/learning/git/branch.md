@@ -3,7 +3,7 @@ title = "Branch"
 front = "A movable pointer to a series of commits — used to isolate work."
 category = "branching"
 difficulty = "beginner"
-weight = 100
+weight = 70
 +++
 
 ```sh

@@ -3,7 +3,7 @@ title = "Set Up SSH Keys for GitHub"
 front = "Configure password-less authentication for git operations against GitHub. One-time setup that saves friction forever."
 category = "workflows"
 difficulty = "intermediate"
-weight = 210
+weight = 180
 +++
 
 ```sh

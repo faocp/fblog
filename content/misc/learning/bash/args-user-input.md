@@ -3,7 +3,7 @@ title = "Args & User Input"
 front = "Standard pattern for parsing positional args and flags in a script."
 category = "workflows"
 difficulty = "intermediate"
-weight = 420
+weight = 240
 +++
 
 ```sh

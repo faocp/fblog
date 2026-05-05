@@ -3,7 +3,7 @@ title = "Pipes"
 front = "Connect the stdout of one command to the stdin of the next."
 category = "files-streams"
 difficulty = "beginner"
-weight = 210
+weight = 120
 +++
 
 ```sh

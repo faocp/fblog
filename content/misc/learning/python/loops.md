@@ -1,19 +1,23 @@
 +++
 title = "Loops"
-front = "Loops repeat work for each item or while a condition remains true."
-category = "control flow"
+front = "Iterate over sequences with for, repeat conditions with while."
+category = "basics"
 difficulty = "beginner"
-weight = 130
+weight = 40
 +++
 
-Example:
+```python
+for item in items:
+    print(item)
 
-```py
-for name in names:
-    print(name)
+for i, item in enumerate(items):
+    print(f"{i}: {item}")
 
-while retries > 0:
-    retries -= 1
+for key, value in config.items():
+    print(f"{key} = {value}")
+
+while queue:
+    process(queue.pop())
 ```
 
-Use `for` when iterating over a collection. Use `while` when repetition depends on a condition.
+`enumerate` for index+value, `.items()` for dict pairs, `zip` for parallel iteration. Avoid `for i in range(len(items))` — it's a code smell.

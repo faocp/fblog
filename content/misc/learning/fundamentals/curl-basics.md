@@ -3,7 +3,7 @@ title = "curl Basics"
 front = "The standard tool for making HTTP requests from the command line."
 category = "network"
 difficulty = "beginner"
-weight = 120
+weight = 110
 +++
 
 ```sh

@@ -3,7 +3,7 @@ title = "Undo a Pushed Commit"
 front = "Reverse a bad commit that's already on GitHub without rewriting shared history. The safe approach is to add a new commit that cancels out the old one."
 category = "workflows"
 difficulty = "intermediate"
-weight = 450
+weight = 260
 +++
 
 ```sh

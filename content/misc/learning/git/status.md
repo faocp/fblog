@@ -10,4 +10,4 @@ weight = 40
 git status
 ```
 
-Your most-used command. Run it constantly to stay oriented — before committing, before switching branches, before pulling.
+Your most-used command. Run it constantly to stay oriented.

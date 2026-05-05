@@ -1,16 +1,24 @@
 +++
 title = "File I/O"
-front = "File I/O means reading from and writing to files."
-category = "files"
+front = "Read and write files with the `with` statement to auto-close."
+category = "utilities"
 difficulty = "beginner"
-weight = 220
+weight = 190
 +++
 
-Example:
+```python
+# read
+with open("data.txt") as f:
+    content = f.read()
 
-```py
-with open("notes.txt") as file:
-    text = file.read()
+# read line by line
+with open("log.txt") as f:
+    for line in f:
+        process(line.strip())
+
+# write
+with open("out.txt", "w") as f:
+    f.write("hello\n")
 ```
 
-Real-world example: read configuration, process CSV files, generate reports, or save results from a script.
+Always use `with` — it closes the file even on errors. For JSON, use `json.load(f)` / `json.dump(data, f)`.

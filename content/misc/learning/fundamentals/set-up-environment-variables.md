@@ -3,10 +3,10 @@ title = "Set Up Environment Variables"
 front = "Move secrets and per-machine config out of code and into env vars or a `.env` file. The standard pattern across every language."
 category = "workflows"
 difficulty = "intermediate"
-weight = 200
+weight = 170
 +++
 
-```sh
+```text
 # 1. Permanent — add to ~/.zshrc or ~/.bashrc
 export OPENAI_API_KEY="sk-..."
 export DATABASE_URL="postgres://localhost/myapp"
@@ -19,16 +19,12 @@ DATABASE_URL=postgres://localhost/myapp
 
 # load it (bash)
 set -a; source .env; set +a
-```
 
-```python
 # in Python (with python-dotenv)
 from dotenv import load_dotenv
 load_dotenv()
 api_key = os.environ["OPENAI_API_KEY"]
-```
 
-```sh
 # always: add to .gitignore
 echo ".env" >> .gitignore
 ```

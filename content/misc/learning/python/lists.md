@@ -1,16 +1,19 @@
 +++
 title = "Lists"
-front = "A list stores an ordered, mutable collection of values."
-category = "data"
+front = "Ordered, mutable sequence — your default choice for collections."
+category = "data-structures"
 difficulty = "beginner"
-weight = 80
+weight = 70
 +++
 
-Example:
-
-```py
-items = ["tea", "coffee"]
-items.append("water")
+```python
+items = [1, 2, 3]
+items.append(4)              # [1, 2, 3, 4]
+items[0]                     # 1
+items[-1]                    # 4 (last)
+items[1:3]                   # [2, 3] (slice)
+len(items)                   # 4
+[x * 2 for x in items]       # comprehension
 ```
 
-Lists are useful when order matters or when you need to add, remove, or update items.
+Slicing is one of Python's superpowers — `[start:end:step]`. Negative indices count from the end.

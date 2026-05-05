@@ -3,7 +3,7 @@ title = "while loops"
 front = "Repeat while a condition holds. Most useful for reading input line-by-line and polling."
 category = "control-flow"
 difficulty = "beginner"
-weight = 120
+weight = 90
 +++
 
 ```sh

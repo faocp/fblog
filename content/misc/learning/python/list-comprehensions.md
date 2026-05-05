@@ -1,16 +1,20 @@
 +++
-title = "List comprehensions"
-front = "A list comprehension builds a list from an iterable in a compact way."
-category = "patterns"
-difficulty = "intermediate"
-weight = 240
+title = "Comprehensions"
+front = "Concise way to build a list, dict, or set from an iterable."
+category = "data-structures"
+difficulty = "beginner"
+weight = 100
 +++
 
-Example:
+```python
+# list comprehension
+evens = [x for x in range(10) if x % 2 == 0]
 
-```py
-squares = [n * n for n in numbers]
-evens = [n for n in numbers if n % 2 == 0]
+# dict comprehension
+squares = {x: x**2 for x in range(5)}
+
+# filter + transform
+names = [u["name"].upper() for u in users if u["active"]]
 ```
 
-Real-world example: transform API results, normalize text, or filter a list without writing a full loop.
+Readable for simple cases. If a comprehension grows past one line or has nested loops, use a regular for-loop instead.

@@ -3,7 +3,7 @@ title = "Line Endings"
 front = "Text files end lines differently across systems: Unix uses LF (`\\n`), Windows uses CRLF (`\\r\\n`)."
 category = "data"
 difficulty = "beginner"
-weight = 180
+weight = 160
 +++
 
 ```sh

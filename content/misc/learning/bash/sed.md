@@ -2,8 +2,8 @@
 title = "sed"
 front = "Stream editor — find/replace and basic transforms on text."
 category = "utilities"
-difficulty = "intermediate"
-weight = 320
+difficulty = "beginner"
+weight = 180
 +++
 
 ```sh

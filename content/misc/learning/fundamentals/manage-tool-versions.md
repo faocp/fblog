@@ -3,7 +3,7 @@ title = "Manage Tool Versions"
 front = "Different projects often need different versions of Python, Node, etc. Version managers handle this without polluting your system."
 category = "workflows"
 difficulty = "intermediate"
-weight = 230
+weight = 200
 +++
 
 ```sh

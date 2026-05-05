@@ -11,4 +11,4 @@ git add src/auth.js
 git commit -m "Validate email on signup"
 ```
 
-Keep commits small and focused on one logical change. Good messages explain *why*, not *what* — the diff already shows what changed.
+Keep commits small and focused on one logical change. Good messages explain *why*, not *what*.

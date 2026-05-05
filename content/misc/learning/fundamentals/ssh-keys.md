@@ -3,7 +3,7 @@ title = "SSH Keys"
 front = "A key pair lets you authenticate to remote servers (and GitHub) without passwords."
 category = "network"
 difficulty = "beginner"
-weight = 130
+weight = 120
 +++
 
 ```sh

@@ -3,7 +3,7 @@ title = "if / else"
 front = "Conditional execution. Test expressions go in `[[ ... ]]`."
 category = "control-flow"
 difficulty = "beginner"
-weight = 100
+weight = 70
 +++
 
 ```sh

@@ -2,8 +2,8 @@
 title = "xargs"
 front = "Build commands from stdin — useful for chaining `find` to other commands."
 category = "utilities"
-difficulty = "intermediate"
-weight = 340
+difficulty = "beginner"
+weight = 200
 +++
 
 ```sh

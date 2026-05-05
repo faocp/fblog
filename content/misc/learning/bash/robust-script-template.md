@@ -3,7 +3,7 @@ title = "Robust Script Template"
 front = "A safe starting point for any new script. The `set` options catch errors that would otherwise pass silently."
 category = "workflows"
 difficulty = "intermediate"
-weight = 400
+weight = 220
 +++
 
 ```sh

@@ -3,7 +3,7 @@ title = "Globs & Wildcards"
 front = "Pattern matching for filenames."
 category = "files-streams"
 difficulty = "beginner"
-weight = 240
+weight = 150
 +++
 
 ```sh

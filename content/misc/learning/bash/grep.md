@@ -3,7 +3,7 @@ title = "grep"
 front = "Search for patterns in files or stdin."
 category = "utilities"
 difficulty = "beginner"
-weight = 300
+weight = 160
 +++
 
 ```sh

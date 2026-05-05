@@ -3,7 +3,7 @@ title = "stdin / stdout / stderr"
 front = "File descriptors 0, 1, 2 — input, normal output, error output."
 category = "files-streams"
 difficulty = "beginner"
-weight = 230
+weight = 140
 +++
 
 ```sh

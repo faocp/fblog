@@ -2,8 +2,8 @@
 title = "gh CLI"
 front = "GitHub's official command-line tool — pairs with git for GitHub-specific tasks."
 category = "utilities"
-difficulty = "intermediate"
-weight = 340
+difficulty = "beginner"
+weight = 200
 +++
 
 ```sh

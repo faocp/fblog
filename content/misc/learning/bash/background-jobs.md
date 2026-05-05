@@ -3,7 +3,7 @@ title = "Background Jobs"
 front = "Run commands asynchronously and manage long-running processes."
 category = "workflows"
 difficulty = "intermediate"
-weight = 430
+weight = 250
 +++
 
 ```sh

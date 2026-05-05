@@ -1,18 +1,22 @@
 +++
-title = "Truthiness"
-front = "Python values can behave as true or false in conditions."
-category = "control flow"
-difficulty = "intermediate"
-weight = 250
+title = "None & Truthiness"
+front = "Empty containers, 0, and None all evaluate as False in conditions."
+category = "basics"
+difficulty = "beginner"
+weight = 60
 +++
 
-Falsey values include `False`, `None`, `0`, empty strings, and empty collections.
+```python
+items = []
+if not items:
+    print("empty")
 
-Example:
+value = config.get("key")     # returns None if missing
+if value is None:
+    value = "default"
 
-```py
-if items:
-    print("we have items")
+# short version
+value = config.get("key") or "default"
 ```
 
-Real-world example: check whether a list has results before displaying them.
+Always use `is None` / `is not None` to compare with None — `==` works but is non-idiomatic.

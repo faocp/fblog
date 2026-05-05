@@ -3,7 +3,7 @@ title = "Pull Request"
 front = "A GitHub feature for proposing a merge from one branch into another, with discussion, review, and CI checks."
 category = "remote"
 difficulty = "beginner"
-weight = 240
+weight = 150
 +++
 
 ```sh

@@ -1,16 +1,21 @@
 +++
 title = "Functions"
-front = "A function names a reusable block of code that can take parameters and return a value."
-category = "functions"
+front = "Reusable blocks of logic with arguments and an optional return value."
+category = "basics"
 difficulty = "beginner"
-weight = 140
+weight = 50
 +++
 
-Example:
+```python
+def greet(name: str, greeting: str = "Hello") -> str:
+    return f"{greeting}, {name}!"
 
-```py
-def greet(name):
-    return f"hello, {name}"
+greet("Felipe")                  # uses default
+greet("Felipe", greeting="Hey")  # keyword arg
+
+# *args and **kwargs
+def log(*args, **kwargs):
+    print(args, kwargs)
 ```
 
-Functions make code easier to test, reuse, and understand. Good functions usually do one clear job.
+Use type hints in any code others will read. Default arguments must be immutable — never `def f(x=[])` (it's shared across calls).

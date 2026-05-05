@@ -3,10 +3,10 @@ title = "JSON"
 front = "The standard data format for APIs and config — strings, numbers, booleans, null, arrays, objects."
 category = "data"
 difficulty = "beginner"
-weight = 150
+weight = 130
 +++
 
-```json
+```text
 {
   "name": "Felipe",
   "age": 30,
@@ -14,14 +14,10 @@ weight = 150
   "tags": ["admin", "ops"],
   "address": null
 }
-```
 
-```sh
 # validate / pretty-print
 cat data.json | jq .
-```
 
-```python
 # in Python
 import json
 data = json.loads(raw_string)

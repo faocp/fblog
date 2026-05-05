@@ -1,16 +1,21 @@
 +++
-title = "Tuples"
-front = "A tuple stores an ordered, immutable collection of values."
-category = "data"
+title = "Tuples & Sets"
+front = "Tuples are immutable lists; sets are unordered collections of unique items."
+category = "data-structures"
 difficulty = "beginner"
 weight = 90
 +++
 
-Example:
-
-```py
+```python
+# tuples — fixed structure
 point = (10, 20)
-x, y = point
+x, y = point                 # unpacking
+
+# sets — uniqueness, fast membership tests
+seen = {1, 2, 3}
+seen.add(4)
+2 in seen                    # True (O(1))
+list(set(items))             # dedupe a list
 ```
 
-Real-world example: tuples are useful for fixed pairs or records, such as coordinates, RGB colors, or multiple return values from a function.
+Tuples for fixed records (coordinates, multiple return values). Sets when you need uniqueness or fast `in` checks.

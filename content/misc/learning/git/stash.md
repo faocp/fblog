@@ -2,8 +2,8 @@
 title = "git stash"
 front = "Temporarily shelves uncommitted changes so you can switch contexts."
 category = "utilities"
-difficulty = "intermediate"
-weight = 310
+difficulty = "beginner"
+weight = 170
 +++
 
 ```sh

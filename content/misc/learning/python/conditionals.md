@@ -1,20 +1,23 @@
 +++
-title = "Conditionals"
-front = "`if`, `elif`, and `else` let your program choose what to do based on a condition."
-category = "control flow"
+title = "Control Flow"
+front = "Conditional execution with if/elif/else. Indentation defines blocks — there are no braces."
+category = "basics"
 difficulty = "beginner"
-weight = 120
+weight = 30
 +++
 
-Example:
+```python
+status = response.status_code
 
-```py
-if temperature > 30:
-    print("hot")
-elif temperature > 20:
-    print("warm")
+if status == 200:
+    print("OK")
+elif status < 500:
+    print("Client error")
 else:
-    print("cool")
+    print("Server error")
+
+# ternary
+msg = "OK" if status == 200 else "Error"
 ```
 
-Real-world example: conditionals decide whether a form is valid, a file exists, or a user has permission.
+Standard indent is 4 spaces, never tabs. Most editors (and tools like ruff/black) enforce this automatically.

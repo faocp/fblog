@@ -3,7 +3,7 @@ title = "find"
 front = "Locate files by name, type, modification time, or other attributes."
 category = "utilities"
 difficulty = "beginner"
-weight = 310
+weight = 170
 +++
 
 ```sh

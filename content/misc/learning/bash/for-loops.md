@@ -3,7 +3,7 @@ title = "for loops"
 front = "Iterate over a list, range, or files matching a glob."
 category = "control-flow"
 difficulty = "beginner"
-weight = 110
+weight = 80
 +++
 
 ```sh

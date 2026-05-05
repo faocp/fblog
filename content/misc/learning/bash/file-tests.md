@@ -3,7 +3,7 @@ title = "File Tests"
 front = "Common tests inside `[[ ]]` for checking file properties."
 category = "files-streams"
 difficulty = "beginner"
-weight = 220
+weight = 130
 +++
 
 ```sh

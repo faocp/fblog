@@ -6,8 +6,8 @@ difficulty = "beginner"
 weight = 20
 +++
 
-```text
+```sh
 edit  →  git add  →  git commit
 ```
 
-This is the mental model for everything else. Staging lets you commit a curated subset of your changes — edit ten files, but commit the three that belong to a single logical change.
+This is the mental model for everything else. Staging lets you commit a curated subset of your changes.

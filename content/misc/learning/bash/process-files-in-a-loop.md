@@ -1,9 +1,9 @@
 +++
 title = "Process Files in a Loop"
-front = "Iterate over matching files and run something on each, with proper handling of edge cases like spaces and nested directories."
+front = "A common pattern: iterate over matching files and run something on each, with proper handling of edge cases like spaces and nested directories."
 category = "workflows"
 difficulty = "intermediate"
-weight = 410
+weight = 230
 +++
 
 ```sh

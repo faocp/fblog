@@ -2,8 +2,8 @@
 title = "Undo Changes"
 front = "Discard, unstage, or rewind — depending on how far back you went."
 category = "utilities"
-difficulty = "intermediate"
-weight = 320
+difficulty = "beginner"
+weight = 180
 +++
 
 ```sh

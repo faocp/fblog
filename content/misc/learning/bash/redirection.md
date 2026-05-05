@@ -3,7 +3,7 @@ title = "Redirection"
 front = "Send command output to a file or read input from a file."
 category = "files-streams"
 difficulty = "beginner"
-weight = 200
+weight = 110
 +++
 
 ```sh

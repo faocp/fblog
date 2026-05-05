@@ -1,9 +1,9 @@
 +++
 title = "Daily Push Flow"
-front = "The end-to-end loop for adding a feature or fix and getting it merged into main on GitHub."
+front = "The end-to-end loop for adding a feature or fix and getting it merged into main on GitHub. This is the workflow you'll run dozens of times a week."
 category = "workflows"
 difficulty = "intermediate"
-weight = 400
+weight = 210
 +++
 
 ```sh

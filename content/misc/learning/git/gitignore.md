@@ -3,10 +3,10 @@ title = ".gitignore"
 front = "A file listing patterns git should ignore."
 category = "utilities"
 difficulty = "beginner"
-weight = 300
+weight = 160
 +++
 
-```text
+```sh
 # .gitignore
 node_modules/
 .env

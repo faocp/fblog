@@ -3,7 +3,7 @@ title = "case"
 front = "Match a value against multiple patterns — cleaner than long if/elif chains."
 category = "control-flow"
 difficulty = "beginner"
-weight = 130
+weight = 100
 +++
 
 ```sh

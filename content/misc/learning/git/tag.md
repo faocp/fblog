@@ -2,8 +2,8 @@
 title = "Tags"
 front = "Named pointers to specific commits, used for releases."
 category = "utilities"
-difficulty = "intermediate"
-weight = 330
+difficulty = "beginner"
+weight = 190
 +++
 
 ```sh

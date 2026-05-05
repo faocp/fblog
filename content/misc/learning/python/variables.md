@@ -1,16 +1,19 @@
 +++
-title = "Variables"
-front = "A variable is a name that refers to a value."
+title = "Variables & Types"
+front = "Python is dynamically typed — you don't declare types, but they exist at runtime."
 category = "basics"
 difficulty = "beginner"
-weight = 40
+weight = 10
 +++
 
-Example:
+```python
+name = "Felipe"          # str
+age = 30                 # int
+ratio = 0.5              # float
+active = True            # bool
+items = None             # NoneType
 
-```py
-name = "felipe"
-count = 3
+type(age)                # <class 'int'>
 ```
 
-In Python, names can be reassigned to different values. The value has a type; the variable name itself does not have a fixed type.
+Type hints (`age: int = 30`) are optional but increasingly standard — they help with editor autocomplete and tools like mypy.

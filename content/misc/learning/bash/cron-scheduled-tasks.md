@@ -3,7 +3,7 @@ title = "Cron / Scheduled Tasks"
 front = "Run scripts on a schedule. Cron is the standard Unix scheduler and is everywhere."
 category = "workflows"
 difficulty = "intermediate"
-weight = 440
+weight = 260
 +++
 
 ```sh

@@ -3,7 +3,7 @@ title = "Find What's Running on a Port"
 front = "A common debugging task — figuring out which process owns a port and freeing it."
 category = "workflows"
 difficulty = "intermediate"
-weight = 220
+weight = 190
 +++
 
 ```sh

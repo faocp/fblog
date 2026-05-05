@@ -2,8 +2,8 @@
 title = "awk"
 front = "Column-oriented text processing — powerful for tabular data."
 category = "utilities"
-difficulty = "intermediate"
-weight = 330
+difficulty = "beginner"
+weight = 190
 +++
 
 ```sh

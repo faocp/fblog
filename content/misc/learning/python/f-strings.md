@@ -1,17 +1,19 @@
 +++
 title = "f-strings"
-front = "An f-string formats values directly inside a string using `{}` placeholders."
-category = "data"
+front = "The modern way to interpolate values into strings."
+category = "basics"
 difficulty = "beginner"
-weight = 70
+weight = 20
 +++
 
-Example:
-
-```py
+```python
 name = "Felipe"
-score = 42
-print(f"{name} scored {score}")
+count = 42
+
+print(f"Hello, {name}!")
+print(f"Found {count} items")
+print(f"Ratio: {count / 100:.2f}")    # formatting
+print(f"{name=}")                      # → name='Felipe'
 ```
 
-Real-world example: use f-strings to build readable log messages, filenames, or user-facing text.
+Always prefer f-strings over `.format()` or `%` formatting. The `=` debug syntax is great for quick logging.

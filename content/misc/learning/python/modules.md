@@ -1,16 +1,18 @@
 +++
-title = "Modules and imports"
-front = "A module is a Python file you can import and reuse."
-category = "organization"
+title = "Imports"
+front = "Bring code from other files or installed packages into your script."
+category = "modules-env"
 difficulty = "beginner"
-weight = 170
+weight = 120
 +++
 
-Example:
+```python
+import os                            # whole module
+from pathlib import Path             # specific name
+from datetime import datetime as dt  # alias
 
-```py
-import math
-from pathlib import Path
+# your own modules
+from utils.auth import validate
 ```
 
-Real-world example: split a larger program into modules like `models.py`, `utils.py`, and `main.py` so each file has a clear purpose.
+Group imports: stdlib first, then third-party, then your own — separated by blank lines. Tools like ruff enforce this automatically.

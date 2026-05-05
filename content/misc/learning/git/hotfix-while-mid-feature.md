@@ -3,7 +3,7 @@ title = "Hotfix While Mid-Feature"
 front = "Drop your in-progress work to ship an urgent fix, then come back to where you left off. Stash is the key tool here."
 category = "workflows"
 difficulty = "intermediate"
-weight = 430
+weight = 240
 +++
 
 ```sh

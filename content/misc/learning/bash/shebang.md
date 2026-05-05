@@ -10,9 +10,7 @@ weight = 60
 #!/usr/bin/env bash
 # script.sh
 echo "Hello from $(basename "$0")"
-```
 
-```sh
 # make it runnable
 chmod +x script.sh
 ./script.sh
