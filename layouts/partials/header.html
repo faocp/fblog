@@ -15,8 +15,13 @@
     {{ $url := .URL | relURL }}
     <a href="{{ $url }}" {{ if or (eq $.RelPermalink $url) (and (ne $url "/") (hasPrefix $.RelPermalink $url)) }}class="active"{{ end }}>{{ .Name }}</a>
     {{ end }}
-    <button id="reader-toggle" aria-label="toggle reader mode" title="toggle reader mode"></button>
-    <button id="theme-toggle" aria-label="toggle theme" title="toggle theme"></button>
+    <div class="font-toggle" role="group" aria-label="font">
+      <button type="button" data-font-option="mono" aria-pressed="false" title="use Geist Mono">mono</button>
+      <button type="button" data-font-option="sans" aria-pressed="false" title="use Geist Sans">sans</button>
+      <button type="button" data-font-option="pixel" aria-pressed="false" title="use Geist Pixel">pixel</button>
+    </div>
+    <button id="reader-toggle" type="button" aria-label="toggle reader mode" title="toggle reader mode"></button>
+    <button id="theme-toggle" type="button" aria-label="toggle theme" title="toggle theme"></button>
   </nav>
 </header>
 <script>
@@ -52,6 +57,25 @@
       try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
       updateToggle();
     });
+
+    // font toggle
+    var fontButtons = document.querySelectorAll('[data-font-option]');
+    function updateFonts() {
+      var activeFont = document.documentElement.getAttribute('data-font') || 'mono';
+      for (var i = 0; i < fontButtons.length; i++) {
+        var isActive = fontButtons[i].getAttribute('data-font-option') === activeFont;
+        fontButtons[i].setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      }
+    }
+    updateFonts();
+    for (var i = 0; i < fontButtons.length; i++) {
+      fontButtons[i].addEventListener('click', function() {
+        var font = this.getAttribute('data-font-option');
+        document.documentElement.setAttribute('data-font', font);
+        try { localStorage.setItem('font', font); } catch (e) {}
+        updateFonts();
+      });
+    }
 
     // ascii star twinkle
     var chars = ['*', '\u00b7', '+', '\u02da', '\u2726'];
