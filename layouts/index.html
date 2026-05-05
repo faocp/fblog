@@ -1,13 +1,37 @@
 {{ define "main" }}
-  {{ with .Site.Params.description }}<p class="site-desc">{{ . }}</p>{{ end }}
+  <section class="home-terminal" aria-label="site introduction">
+    <div class="terminal-command"><span class="prompt">$</span> whoami</div>
+    {{ with .Site.Params.description }}<p class="site-desc">{{ . }}</p>{{ end }}
+
+    {{ with .Site.Params.currently }}
+    <div class="terminal-command"><span class="prompt">$</span> now</div>
+    <ul class="currently-list">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    {{ end }}
+  </section>
 
   {{ $posts := where site.RegularPages "Section" "posts" }}
-  {{ $featured := first 5 $posts }}
-  {{ if $featured }}
+  {{ $featuredPosts := first 1 (where $posts "Params.featured" true) }}
+  {{ with $featuredPosts }}
+  <section class="featured-post-section">
+    <h2 class="section-heading">pinned</h2>
+    {{ range . }}
+    <a class="featured-post" href="{{ .RelPermalink }}">
+      <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+      <strong>{{ .Title }}</strong>
+      {{ with .Summary }}<span>{{ . | plainify | truncate 140 }}</span>{{ end }}
+    </a>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  {{ $recentPosts := first 5 $posts }}
+  {{ if $recentPosts }}
   <section>
     <h2 class="section-heading">recent posts</h2>
     <ul class="post-list">
-      {{ range $featured }}
+      {{ range $recentPosts }}
       <li>
         <div class="post-list-link">
           <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
@@ -26,4 +50,38 @@
     {{ end }}
   </section>
   {{ end }}
+
+  {{ .Scratch.Set "learningCount" 0 }}
+  {{ range site.RegularPages }}
+    {{ with .File }}
+      {{ if hasPrefix .Path "misc/learning/" }}{{ $.Scratch.Add "learningCount" 1 }}{{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ $lastPost := index (first 1 $posts.ByDate.Reverse) 0 }}
+  {{ $linksPage := site.GetPage "links" }}
+  {{ $learningPage := site.GetPage "misc/learning" }}
+  {{ $learningCount := .Scratch.Get "learningCount" }}
+
+  <section class="section-directory" aria-label="site sections">
+    <h2 class="section-heading">$ ls ~/www</h2>
+    <div class="directory-list">
+      <a class="directory-entry" href="{{ "posts/" | relURL }}">
+        <span class="directory-name">posts/</span>
+        <span class="directory-meta">{{ len $posts }} entries{{ with $lastPost }} · last {{ .Date.Format "2006-01-02" }}{{ end }}</span>
+      </a>
+      {{ with $learningPage }}
+      <a class="directory-entry" href="{{ .RelPermalink }}">
+        <span class="directory-name">misc/learning/</span>
+        <span class="directory-meta">{{ $learningCount }} flashcards</span>
+      </a>
+      {{ end }}
+      {{ with $linksPage }}
+      <a class="directory-entry" href="{{ .RelPermalink }}">
+        <span class="directory-name">links/</span>
+        <span class="directory-meta">1 page · last {{ .Date.Format "2006-01-02" }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
 {{ end }}
