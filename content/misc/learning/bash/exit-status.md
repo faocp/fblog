@@ -19,4 +19,4 @@ if grep -q "ERROR" log.txt; then
 fi
 ```
 
-Don't check `$?` after the command — use the command directly in `if`. `&&` chains success, `||` chains failure: `cmd1 && cmd2 || echo "failed"`.
+Don't check `$?` after the command; use the command directly in `if`. `&&` chains success, `||` chains failure: `cmd1 && cmd2 || echo "failed"`.

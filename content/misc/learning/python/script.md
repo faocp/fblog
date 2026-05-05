@@ -14,7 +14,7 @@ uv run python -m mypackage.cli      # for packages
 # 2. Run an entry point defined in pyproject.toml
 uv run mytool                       # if [project.scripts] defines it
 
-# 3. The "main" guard — only runs when executed directly
+# 3. The "main" guard (only runs when executed directly)
 def main():
     ...
 
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     main()
 ```
 
-Use `python -m` form when running anything inside a package — direct execution breaks relative imports. The `__main__` guard prevents code from running when the file is imported elsewhere.
+Use `python -m` form when running anything inside a package; direct execution breaks relative imports. The `__main__` guard prevents code from running when the file is imported elsewhere.

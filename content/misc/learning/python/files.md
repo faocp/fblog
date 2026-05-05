@@ -21,4 +21,4 @@ with open("out.txt", "w") as f:
     f.write("hello\n")
 ```
 
-Always use `with` — it closes the file even on errors. For JSON, use `json.load(f)` / `json.dump(data, f)`.
+Always use `with`; it closes the file even on errors. For JSON, use `json.load(f)` / `json.dump(data, f)`.

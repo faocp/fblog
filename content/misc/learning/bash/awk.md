@@ -1,6 +1,6 @@
 +++
 title = "awk"
-front = "Column-oriented text processing — powerful for tabular data."
+front = "Column-oriented text processing, powerful for tabular data."
 category = "utilities"
 difficulty = "beginner"
 weight = 190

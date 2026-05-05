@@ -1,6 +1,6 @@
 +++
 title = "Find What's Running on a Port"
-front = "A common debugging task — figuring out which process owns a port and freeing it."
+front = "A common debugging task: figuring out which process owns a port and freeing it."
 category = "workflows"
 difficulty = "intermediate"
 weight = 190
@@ -26,4 +26,4 @@ kill -9 12345
 lsof -ti :3000 | xargs kill
 ```
 
-After a crashed dev server you'll often see "address already in use" — this is the fix. Try `kill` (SIGTERM) first; only escalate to `kill -9` (SIGKILL) if the process won't stop.
+After a crashed dev server you'll often see "address already in use". This is the fix. Try `kill` (SIGTERM) first; only escalate to `kill -9` (SIGKILL) if the process won't stop.

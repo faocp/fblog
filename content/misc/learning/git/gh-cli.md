@@ -1,6 +1,6 @@
 +++
 title = "gh CLI"
-front = "GitHub's official command-line tool — pairs with git for GitHub-specific tasks."
+front = "GitHub's official command-line tool that pairs with git for GitHub-specific tasks."
 category = "utilities"
 difficulty = "beginner"
 weight = 200

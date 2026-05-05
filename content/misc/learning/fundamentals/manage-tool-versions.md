@@ -7,13 +7,13 @@ weight = 200
 +++
 
 ```sh
-# Python — uv handles versions natively
+# Python: uv handles versions natively
 uv python install 3.12
 uv python install 3.11
 uv python list                # what's available
 uv python pin 3.12            # writes .python-version
 
-# Node.js — fnm or nvm
+# Node.js: fnm or nvm
 fnm install 20
 fnm use 20
 fnm default 20
@@ -23,4 +23,4 @@ python --version
 node --version
 ```
 
-Avoid installing language runtimes directly through `brew` or `apt` for development — version conflicts will bite you. Use uv (Python), fnm/nvm (Node), or asdf (multi-language) and let project files declare which version to use.
+Avoid installing language runtimes directly through `brew` or `apt` for development; version conflicts will bite you. Use uv (Python), fnm/nvm (Node), or asdf (multi-language) and let project files declare which version to use.

@@ -16,4 +16,4 @@ uv tool run black file.py
 uvx black file.py            # short form
 ```
 
-For tools you want available everywhere (linters, formatters, CLIs). Each gets its own isolated env. `uvx` is shorthand for `uv tool run` — handy for one-offs.
+For tools you want available everywhere (linters, formatters, CLIs). Each gets its own isolated env. `uvx` is shorthand for `uv tool run`, handy for one-offs.

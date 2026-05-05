@@ -1,6 +1,6 @@
 +++
 title = "xargs"
-front = "Build commands from stdin — useful for chaining `find` to other commands."
+front = "Build commands from stdin, useful for chaining `find` to other commands."
 category = "utilities"
 difficulty = "beginner"
 weight = 200
@@ -19,4 +19,4 @@ ls *.jpg | xargs -I {} mv {} processed/
 cat urls.txt | xargs -P 4 -I {} curl -sO {}
 ```
 
-Always use `-print0` + `-0` when filenames might have spaces. `-P N` runs N commands in parallel — handy for I/O-bound tasks like batch downloads.
+Always use `-print0` + `-0` when filenames might have spaces. `-P N` runs N commands in parallel, handy for I/O-bound tasks like batch downloads.

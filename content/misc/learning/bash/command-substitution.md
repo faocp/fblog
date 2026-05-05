@@ -14,4 +14,4 @@ count="$(ls *.txt | wc -l)"
 echo "Backup-${today}-${branch}.tar.gz"
 ```
 
-Always use `$(...)` not backticks — it nests cleanly and is easier to read in any non-trivial expression.
+Always use `$(...)` not backticks; it nests cleanly and is easier to read in any non-trivial expression.

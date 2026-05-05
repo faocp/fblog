@@ -21,4 +21,4 @@ DELETE  /users/42      # remove
 5xx  server err  (500, 502 Bad Gateway, 503)
 ```
 
-When debugging APIs, the status code's first digit tells you whose problem it is — 4xx means *your* request was bad, 5xx means the server failed.
+When debugging APIs, the status code's first digit tells you whose problem it is: 4xx means *your* request was bad, 5xx means the server failed.

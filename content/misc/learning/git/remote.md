@@ -1,6 +1,6 @@
 +++
 title = "Remote"
-front = "A version of your repo hosted elsewhere — usually GitHub."
+front = "A version of your repo hosted elsewhere, usually GitHub."
 category = "remote"
 difficulty = "beginner"
 weight = 110

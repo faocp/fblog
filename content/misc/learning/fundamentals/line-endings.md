@@ -9,7 +9,7 @@ weight = 160
 ```sh
 # check
 file script.sh
-# → ASCII text                     (good — LF)
+# → ASCII text                     (good: LF)
 # → ASCII text, with CRLF endings  (Windows)
 
 # convert

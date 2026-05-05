@@ -19,4 +19,4 @@ while ! curl -sf http://localhost:8080/health; do
 done
 ```
 
-`IFS= read -r` is the canonical safe way to read lines — it preserves whitespace and treats backslashes literally.
+`IFS= read -r` is the canonical safe way to read lines; it preserves whitespace and treats backslashes literally.

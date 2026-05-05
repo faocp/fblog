@@ -11,4 +11,4 @@ git switch main
 git merge feature-auth
 ```
 
-On GitHub, merging usually happens through the PR "Merge" button rather than locally — that way CI and review approval are enforced.
+On GitHub, merging usually happens through the PR "Merge" button rather than locally: that way CI and review approval are enforced.

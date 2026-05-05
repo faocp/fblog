@@ -25,4 +25,4 @@ git switch feat/email-validation
 git stash pop
 ```
 
-Hotfixes branch from `main`, not from your feature branch — you don't want to ship half-done feature code with the fix. The `-u` on stash is critical: without it, brand-new files vanish when you switch branches.
+Hotfixes branch from `main`, not from your feature branch, because you don't want to ship half-done feature code with the fix. The `-u` on stash is critical: without it, brand-new files vanish when you switch branches.

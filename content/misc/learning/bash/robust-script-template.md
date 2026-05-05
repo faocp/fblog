@@ -25,4 +25,4 @@ main() {
 main "$@"
 ```
 
-`set -euo pipefail` should be on every script you write. Without `-e`, a failing command keeps going. Without `-u`, typos in variable names silently expand to empty strings — a classic source of bugs.
+`set -euo pipefail` should be on every script you write. Without `-e`, a failing command keeps going. Without `-u`, typos in variable names silently expand to empty strings, a classic source of bugs.

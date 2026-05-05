@@ -7,12 +7,12 @@ weight = 170
 +++
 
 ```text
-# 1. Permanent — add to ~/.zshrc or ~/.bashrc
+# 1. Permanent: add to ~/.zshrc or ~/.bashrc
 export OPENAI_API_KEY="sk-..."
 export DATABASE_URL="postgres://localhost/myapp"
 # then: source ~/.zshrc
 
-# 2. Per-project — .env file (don't commit!)
+# 2. Per-project: .env file (don't commit!)
 # .env
 OPENAI_API_KEY=sk-...
 DATABASE_URL=postgres://localhost/myapp
@@ -29,4 +29,4 @@ api_key = os.environ["OPENAI_API_KEY"]
 echo ".env" >> .gitignore
 ```
 
-User-wide secrets go in your shell rc file. Project-specific config goes in `.env` — never commit it. Commit a `.env.example` with the keys (no values) so teammates know what to set.
+User-wide secrets go in your shell rc file. Project-specific config goes in `.env`; never commit it. Commit a `.env.example` with the keys (no values) so teammates know what to set.

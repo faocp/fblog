@@ -1,6 +1,6 @@
 +++
 title = "pyproject.toml"
-front = "The project config file — declares dependencies, Python version, scripts, and tool settings."
+front = "The project config file: declares dependencies, Python version, scripts, and tool settings."
 category = "modules-env"
 difficulty = "beginner"
 weight = 160

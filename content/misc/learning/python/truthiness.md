@@ -19,4 +19,4 @@ if value is None:
 value = config.get("key") or "default"
 ```
 
-Always use `is None` / `is not None` to compare with None — `==` works but is non-idiomatic.
+Always use `is None` / `is not None` to compare with None; `==` works but is non-idiomatic.

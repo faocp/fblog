@@ -7,11 +7,11 @@ weight = 90
 +++
 
 ```python
-# tuples — fixed structure
+# tuples: fixed structure
 point = (10, 20)
 x, y = point                 # unpacking
 
-# sets — uniqueness, fast membership tests
+# sets: uniqueness, fast membership tests
 seen = {1, 2, 3}
 seen.add(4)
 2 in seen                    # True (O(1))

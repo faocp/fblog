@@ -16,4 +16,4 @@ curl -s api.example.com/users | jq 'map(select(.active))'
 jq -r '.token' response.json
 ```
 
-`-r` removes JSON quoting from string output — needed when piping into other commands. `jq '.'` alone pretty-prints any JSON. Not always pre-installed; `brew install jq` or `apt install jq`.
+`-r` removes JSON quoting from string output, which is needed when piping into other commands. `jq '.'` alone pretty-prints any JSON. Not always pre-installed; `brew install jq` or `apt install jq`.

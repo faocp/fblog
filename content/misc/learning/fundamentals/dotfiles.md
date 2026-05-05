@@ -17,4 +17,4 @@ weight = 40
 source ~/.zshrc
 ```
 
-Put `export VAR=...`, aliases, and functions in `~/.zshrc` (or `~/.bashrc`). After editing, run `source` to reload — or just open a new terminal.
+Put `export VAR=...`, aliases, and functions in `~/.zshrc` (or `~/.bashrc`). After editing, run `source` to reload, or just open a new terminal.

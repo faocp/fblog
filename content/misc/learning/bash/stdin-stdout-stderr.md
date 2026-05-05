@@ -1,6 +1,6 @@
 +++
 title = "stdin / stdout / stderr"
-front = "File descriptors 0, 1, 2 — input, normal output, error output."
+front = "File descriptors 0, 1, 2: input, normal output, error output."
 category = "files-streams"
 difficulty = "beginner"
 weight = 140
@@ -20,4 +20,4 @@ find / -name "*.log" 2> /dev/null
 echo "Warning: file missing" >&2
 ```
 
-`/dev/null` is the bit bucket — anything sent there disappears. Print errors to stderr (`>&2`) so they show up even when stdout is piped or redirected.
+`/dev/null` is the bit bucket; anything sent there disappears. Print errors to stderr (`>&2`) so they show up even when stdout is piped or redirected.

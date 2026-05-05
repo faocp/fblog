@@ -16,4 +16,4 @@ uv remove requests
 uv sync                      # install everything from pyproject.toml
 ```
 
-`uv init` creates `.venv/` (auto-gitignored), `pyproject.toml`, and `uv.lock`. No need to activate the venv manually — `uv run` handles it.
+`uv init` creates `.venv/` (auto-gitignored), `pyproject.toml`, and `uv.lock`. No need to activate the venv manually; `uv run` handles it.

@@ -16,4 +16,4 @@ grep -n "ERROR" app.log     # show line numbers
 grep -E "^(error|warn)" log # extended regex
 ```
 
-`grep -rn pattern .` to search a project with line numbers — your daily driver. If `rg` (ripgrep) is installed, use it instead — much faster and respects .gitignore.
+`grep -rn pattern .` to search a project with line numbers, your daily driver. If `rg` (ripgrep) is installed, use it instead: it is much faster and respects .gitignore.

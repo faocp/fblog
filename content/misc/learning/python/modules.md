@@ -15,4 +15,4 @@ from datetime import datetime as dt  # alias
 from utils.auth import validate
 ```
 
-Group imports: stdlib first, then third-party, then your own — separated by blank lines. Tools like ruff enforce this automatically.
+Group imports: stdlib first, then third-party, then your own, separated by blank lines. Tools like ruff enforce this automatically.

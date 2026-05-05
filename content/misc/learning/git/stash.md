@@ -14,4 +14,4 @@ git switch feature-x
 git stash pop           # restore WIP
 ```
 
-Perfect for the "I need to fix prod *right now*" moment. The `-u` flag matters — without it, untracked files won't be saved.
+Perfect for the "I need to fix prod *right now*" moment. The `-u` flag matters: without it, untracked files won't be saved.

@@ -18,4 +18,4 @@ def log(*args, **kwargs):
     print(args, kwargs)
 ```
 
-Use type hints in any code others will read. Default arguments must be immutable — never `def f(x=[])` (it's shared across calls).
+Use type hints in any code others will read. Default arguments must be immutable: never `def f(x=[])` (it's shared across calls).

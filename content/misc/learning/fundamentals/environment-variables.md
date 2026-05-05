@@ -23,4 +23,4 @@ printenv API_KEY
 DEBUG=1 ./script.sh
 ```
 
-Programs read env vars at startup — the standard pattern for config that varies between machines (API keys, database URLs, debug flags). `export` makes the variable available to child processes; without it, only the current shell sees it.
+Programs read env vars at startup: the standard pattern for config that varies between machines (API keys, database URLs, debug flags). `export` makes the variable available to child processes; without it, only the current shell sees it.

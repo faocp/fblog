@@ -12,4 +12,4 @@ git diff --staged       # what would commit
 git diff main..feature  # between branches
 ```
 
-Always review the diff before committing — it catches stray console.logs and accidental edits.
+Always review the diff before committing: it catches stray console.logs and accidental edits.

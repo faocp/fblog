@@ -12,7 +12,7 @@ ssh-keygen -t ed25519 -C "you@example.com"
 
 # 2. Copy the public key to clipboard
 pbcopy < ~/.ssh/id_ed25519.pub        # macOS
-cat ~/.ssh/id_ed25519.pub             # Linux — copy manually
+cat ~/.ssh/id_ed25519.pub             # Linux: copy manually
 
 # 3. Add it on GitHub:
 #    Settings → SSH and GPG keys → New SSH key

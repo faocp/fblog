@@ -23,4 +23,4 @@ git rebase --continue
 git push --force-with-lease
 ```
 
-`--force-with-lease` is the safe variant of `--force` — it refuses to overwrite commits you haven't seen. If you prefer to avoid history rewrites, `git merge main` into your branch works too, but creates an extra merge commit.
+`--force-with-lease` is the safe variant of `--force`: it refuses to overwrite commits you haven't seen. If you prefer to avoid history rewrites, `git merge main` into your branch works too, but creates an extra merge commit.

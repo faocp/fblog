@@ -17,4 +17,4 @@ cat access.log \
 git log --oneline | wc -l       # commit count
 ```
 
-Pipes are how Unix tools compose. Each tool does one thing — chain them to build pipelines that would be pages of code in other languages.
+Pipes are how Unix tools compose. Each tool does one thing; chain them to build pipelines that would be pages of code in other languages.

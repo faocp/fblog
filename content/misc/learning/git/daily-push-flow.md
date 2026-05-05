@@ -24,4 +24,4 @@ git push -u origin feat/email-validation
 gh pr create --fill
 ```
 
-Always branch from an up-to-date main. Push early — even on rough work — so teammates can see progress and CI runs sooner. The PR is where review and merging happen, not your local machine.
+Always branch from an up-to-date main. Push early (even on rough work) so teammates can see progress and CI runs sooner. The PR is where review and merging happen, not your local machine.

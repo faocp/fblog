@@ -24,4 +24,4 @@ git init
 git add . && git commit -m "Initial commit"
 ```
 
-`uv init` scaffolds a working project in seconds — pyproject.toml, .gitignore, .python-version, README. `uv add` updates pyproject.toml and the lockfile in one step. The lockfile (`uv.lock`) should be committed.
+`uv init` scaffolds a working project in seconds: pyproject.toml, .gitignore, .python-version, README. `uv add` updates pyproject.toml and the lockfile in one step. The lockfile (`uv.lock`) should be committed.

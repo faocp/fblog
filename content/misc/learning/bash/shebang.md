@@ -16,4 +16,4 @@ chmod +x script.sh
 ./script.sh
 ```
 
-Use `#!/usr/bin/env bash` (not `/bin/bash`) — it finds bash via PATH, which works across Linux distros and macOS. `chmod +x` once, then run with `./`.
+Use `#!/usr/bin/env bash` (not `/bin/bash`): it finds bash via PATH, which works across Linux distros and macOS. `chmod +x` once, then run with `./`.

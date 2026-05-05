@@ -16,4 +16,4 @@ command < input.txt         # read from file
 ./build.sh &> build.log     # shorthand (bash only)
 ```
 
-`>` overwrites — be careful, no warning. Use `>>` to append. `2>&1` redirects stderr to wherever stdout is currently going.
+`>` overwrites with no warning, so be careful. Use `>>` to append. `2>&1` redirects stderr to wherever stdout is currently going.

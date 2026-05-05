@@ -18,4 +18,4 @@ git commit --amend --no-edit
 git push --force-with-lease
 ```
 
-Option A is friendlier for reviewers — they can see exactly what changed since their last review. Option B is fine if your team squash-merges anyway, since intermediate commits get collapsed at merge time.
+Option A is friendlier for reviewers: they can see exactly what changed since their last review. Option B is fine if your team squash-merges anyway, since intermediate commits get collapsed at merge time.

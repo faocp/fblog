@@ -15,4 +15,4 @@ printf "%.2f\n" 3.14159          # → 3.14
 printf "[%-10s]\n" "left"        # → [left      ]
 ```
 
-Prefer `printf` in scripts — `echo`'s behavior with flags varies between systems. `printf` is portable and POSIX-standard.
+Prefer `printf` in scripts; `echo`'s behavior with flags varies between systems. `printf` is portable and POSIX-standard.

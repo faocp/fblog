@@ -17,4 +17,4 @@ git revert <commit-hash>
 git push
 ```
 
-`revert` is safe on shared branches — it adds a new commit instead of erasing the old one. Avoid `git reset --hard` + `--force` on any branch others may have pulled; you'll cause confusion and lost work.
+`revert` is safe on shared branches: it adds a new commit instead of erasing the old one. Avoid `git reset --hard` + `--force` on any branch others may have pulled; you'll cause confusion and lost work.

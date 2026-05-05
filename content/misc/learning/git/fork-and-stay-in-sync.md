@@ -1,6 +1,6 @@
 +++
 title = "Fork & Stay in Sync"
-front = "The standard workflow for contributing to a repo you don't have write access to — typical for open source."
+front = "The standard workflow for contributing to a repo you don't have write access to (typical for open source)."
 category = "workflows"
 difficulty = "intermediate"
 weight = 250

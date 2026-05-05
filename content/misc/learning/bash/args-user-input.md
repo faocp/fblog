@@ -27,4 +27,4 @@ input="$1"
 $verbose && echo "Processing $input"
 ```
 
-`getopts` handles short flags well. For complex CLIs (long flags, subcommands) consider rewriting in Python with argparse — bash gets unwieldy fast past a few options.
+`getopts` handles short flags well. For complex CLIs (long flags, subcommands) consider rewriting in Python with argparse; bash gets unwieldy fast past a few options.

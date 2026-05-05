@@ -20,4 +20,4 @@ config:
   port: 8080
 ```
 
-Indentation defines structure — use spaces, never tabs. Whitespace bugs are the #1 cause of YAML errors. Validate with `yq` or a linter before committing.
+Indentation defines structure: use spaces, never tabs. Whitespace bugs are the #1 cause of YAML errors. Validate with `yq` or a linter before committing.

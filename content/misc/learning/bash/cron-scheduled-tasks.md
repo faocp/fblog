@@ -22,4 +22,4 @@ crontab -l
 0 2 * * * /path/to/script.sh >> /var/log/script.log 2>&1
 ```
 
-Cron runs with a minimal environment — always use absolute paths and explicitly redirect output. Test scripts with `bash -l -c "command"` to mimic cron's environment. On modern Linux, systemd timers are an alternative with better logging.
+Cron runs with a minimal environment, so always use absolute paths and explicitly redirect output. Test scripts with `bash -l -c "command"` to mimic cron's environment. On modern Linux, systemd timers are an alternative with better logging.

@@ -19,4 +19,4 @@ with open("file.txt", encoding="utf-8") as f:
     content = f.read()
 ```
 
-Default to UTF-8 everywhere. You'll mostly hit encoding issues with old files or Windows-exported data — `iconv` converts between encodings.
+Default to UTF-8 everywhere. You'll mostly hit encoding issues with old files or Windows-exported data; `iconv` converts between encodings.

@@ -9,8 +9,8 @@ weight = 120
 ```sh
 # generate a modern key
 ssh-keygen -t ed25519 -C "you@example.com"
-# → ~/.ssh/id_ed25519       (private — keep secret)
-# → ~/.ssh/id_ed25519.pub   (public — share freely)
+# → ~/.ssh/id_ed25519       (private, keep secret)
+# → ~/.ssh/id_ed25519.pub   (public, share freely)
 
 # show the public key (paste into GitHub)
 cat ~/.ssh/id_ed25519.pub

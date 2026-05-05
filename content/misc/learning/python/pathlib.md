@@ -1,6 +1,6 @@
 +++
 title = "pathlib"
-front = "Object-oriented file paths — modern replacement for `os.path`."
+front = "Object-oriented file paths: the modern replacement for `os.path`."
 category = "utilities"
 difficulty = "beginner"
 weight = 210
@@ -20,4 +20,4 @@ for f in Path(".").glob("*.py"):
     print(f)
 ```
 
-The `/` operator for joining paths is way cleaner than `os.path.join`. Works on all platforms — handles Windows backslashes for you.
+The `/` operator for joining paths is way cleaner than `os.path.join`. Works on all platforms and handles Windows backslashes for you.

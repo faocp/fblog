@@ -18,4 +18,4 @@ result = subprocess.run(
 print(result.stdout)
 ```
 
-Always pass arguments as a list (not a string) to avoid shell injection. `check=True` raises on non-zero exit codes — saves you from silent failures.
+Always pass arguments as a list (not a string) to avoid shell injection. `check=True` raises on non-zero exit codes, saving you from silent failures.

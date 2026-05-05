@@ -22,4 +22,4 @@ if [[ "$env" == "prod" ]]; then ...; fi
 if (( count > 10 )); then ...; fi
 ```
 
-Use `[[ ]]` for strings/files (modern bash) and `(( ))` for arithmetic. Avoid the older single-bracket `[ ]` — it has subtle quoting issues.
+Use `[[ ]]` for strings/files (modern bash) and `(( ))` for arithmetic. Avoid the older single-bracket `[ ]`; it has subtle quoting issues.

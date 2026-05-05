@@ -1,6 +1,6 @@
 +++
 title = "Hidden Files"
-front = "Files starting with `.` are hidden from `ls` by default — used for config and metadata."
+front = "Files starting with `.` are hidden from `ls` by default, used for config and metadata."
 category = "files"
 difficulty = "beginner"
 weight = 70

@@ -20,4 +20,4 @@ while queue:
     process(queue.pop())
 ```
 
-`enumerate` for index+value, `.items()` for dict pairs, `zip` for parallel iteration. Avoid `for i in range(len(items))` — it's a code smell.
+`enumerate` for index+value, `.items()` for dict pairs, `zip` for parallel iteration. Avoid `for i in range(len(items))`; it's a code smell.

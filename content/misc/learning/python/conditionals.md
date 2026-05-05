@@ -1,6 +1,6 @@
 +++
 title = "Control Flow"
-front = "Conditional execution with if/elif/else. Indentation defines blocks — there are no braces."
+front = "Conditional execution with if/elif/else. Indentation defines blocks; there are no braces."
 category = "basics"
 difficulty = "beginner"
 weight = 30

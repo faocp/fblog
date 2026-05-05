@@ -1,6 +1,6 @@
 +++
 title = "Lists"
-front = "Ordered, mutable sequence — your default choice for collections."
+front = "Ordered, mutable sequence: your default choice for collections."
 category = "data-structures"
 difficulty = "beginner"
 weight = 70
@@ -16,4 +16,4 @@ len(items)                   # 4
 [x * 2 for x in items]       # comprehension
 ```
 
-Slicing is one of Python's superpowers — `[start:end:step]`. Negative indices count from the end.
+Slicing is one of Python's superpowers: `[start:end:step]`. Negative indices count from the end.

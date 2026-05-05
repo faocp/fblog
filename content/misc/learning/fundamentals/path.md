@@ -17,4 +17,4 @@ which -a python       # all matches in PATH
 export PATH="$HOME/bin:$PATH"
 ```
 
-Order matters — the shell uses the first match. Prepend to override system tools. When "command not found" hits a binary you know exists, PATH is usually why.
+Order matters: the shell uses the first match. Prepend to override system tools. When "command not found" hits a binary you know exists, PATH is usually why.

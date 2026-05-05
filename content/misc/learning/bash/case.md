@@ -1,6 +1,6 @@
 +++
 title = "case"
-front = "Match a value against multiple patterns — cleaner than long if/elif chains."
+front = "Match a value against multiple patterns. Cleaner than long if/elif chains."
 category = "control-flow"
 difficulty = "beginner"
 weight = 100
@@ -16,4 +16,4 @@ case "$1" in
 esac
 ```
 
-Patterns support globs, so `*.log` matches any .log file. `*)` is the default catchall — always include it for safety.
+Patterns support globs, so `*.log` matches any .log file. `*)` is the default catchall; always include it for safety.
