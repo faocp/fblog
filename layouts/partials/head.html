@@ -26,11 +26,9 @@
 <script>
   (function() {
     var savedTheme = null;
-    var savedReader = null;
     var savedFont = null;
     try {
       savedTheme = localStorage.getItem('theme');
-      savedReader = localStorage.getItem('reader');
       savedFont = localStorage.getItem('font');
     } catch (e) {}
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -38,8 +36,5 @@
     var font = ['mono', 'sans', 'pixel'].indexOf(savedFont) > -1 ? savedFont : 'mono';
     document.documentElement.setAttribute('data-theme', theme);
     document.documentElement.setAttribute('data-font', font);
-    if (savedReader === 'on') {
-      document.documentElement.setAttribute('data-reader', 'on');
-    }
   })();
 </script>
