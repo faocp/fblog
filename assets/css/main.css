@@ -656,5 +656,5 @@ footer a:hover { color: var(--accent); }
   .post-header h1 { font-size: 1.3rem; }
   .home-hero h1 { font-size: 1.2rem; }
   .home-stars { font-size: 0.72rem; }
-  .home-links { justify-content: flex-start; }
+  .home-links { justify-content: center; }
 }

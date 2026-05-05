@@ -6,12 +6,12 @@
     <pre class="home-stars" aria-hidden="true">
       ·           *              ·
   *        ·              ✦
-        ·     fffelipe     ·
+        ·                 ·
    ✦            ~             *
       ·              *          ·
     </pre>
 
-    <h1>hi, welcome to my small web corner.</h1>
+    <h1>hi, welcome to my small corner of the web.</h1>
     {{ with .Site.Params.description }}<p>{{ . }}</p>{{ end }}
 
     <nav class="home-links" aria-label="quick links">
@@ -32,7 +32,7 @@
   {{ end }}
 
   {{ if $recentPosts }}
-  <section class="home-recent" aria-label="recent posts">
+  <section class="home-recent" aria-label="recent notes">
     <h2 class="section-heading">latest notes</h2>
     <ul class="post-list">
       {{ range $recentPosts }}
@@ -45,7 +45,7 @@
       {{ end }}
     </ul>
     {{ if gt (len $posts) 3 }}
-    <p><a class="all-posts-link" href="{{ "posts/" | relURL }}">all posts →</a></p>
+    <p><a class="all-posts-link" href="{{ "posts/" | relURL }}">all notes →</a></p>
     {{ end }}
   </section>
   {{ end }}

@@ -12,7 +12,7 @@ title = "fffelipe's world wide web"
   ]
 
 [[menus.main]]
-  name   = "posts"
+  name   = "notes"
   url    = "/posts/"
   weight = 1
 
