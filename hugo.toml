@@ -32,6 +32,7 @@ title = "fffelipe's world wide web"
   weight = 4
 
 [markup.goldmark.renderer]
+  # Content is authored locally/trusted; this permits intentional inline HTML in Markdown.
   unsafe = true
 
 [markup.highlight]

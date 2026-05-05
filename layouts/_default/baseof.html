@@ -3,7 +3,10 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body{{ with .Section }} class="section-{{ . }}"{{ end }}>
+{{ $bodyClasses := slice }}
+{{ with .Section }}{{ $bodyClasses = $bodyClasses | append (printf "section-%s" .) }}{{ end }}
+{{ with .File }}{{ if hasPrefix .Path "misc/learning" }}{{ $bodyClasses = $bodyClasses | append "section-learning" }}{{ end }}{{ end }}
+<body{{ with $bodyClasses }} class="{{ delimit . " " }}"{{ end }}>
   {{ partial "header.html" . }}
   <main>
     {{ block "main" . }}{{ end }}

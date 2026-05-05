@@ -1,7 +1,7 @@
 /* ── Fonts ─────────────────────────────────────────────── */
 @font-face {
   font-family: "Geist Sans";
-  src: url("/fonts/geist/Geist-Variable.woff2") format("woff2");
+  src: url("../fonts/geist/Geist-Variable.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Geist Mono";
-  src: url("/fonts/geist/GeistMono-Variable.woff2") format("woff2");
+  src: url("../fonts/geist/GeistMono-Variable.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "Geist Pixel";
-  src: url("/fonts/geist/GeistPixel-Square.woff2") format("woff2");
+  src: url("../fonts/geist/GeistPixel-Square.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -515,13 +515,6 @@ body.section-learning { max-width: 980px; }
 .flashcard {
   font-family: var(--chrome-font);
   min-height: 260px;
-  cursor: pointer;
-  outline: none;
-}
-
-.flashcard:focus-visible .flashcard-face {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
 }
 
 .flashcard-inner {
@@ -545,6 +538,7 @@ body.section-learning { max-width: 980px; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 1rem;
   overflow: auto;
+  cursor: pointer;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -606,11 +600,22 @@ body.section-learning { max-width: 980px; }
 .flashcard-content pre { background: var(--code-bg); border-radius: 4px; margin: 0.75rem 0; overflow-x: auto; padding: 0.75rem; }
 .flashcard-content pre code { background: none; padding: 0; }
 
-.flashcard-hint {
+.flashcard-toggle {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
   color: var(--muted);
+  cursor: pointer;
+  font: inherit;
   font-size: 0.72rem;
   margin-top: auto;
-  padding-top: 1rem;
+  padding: 0.2rem 0.55rem;
+}
+
+.flashcard-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── Footer ─────────────────────────────────────────────── */
