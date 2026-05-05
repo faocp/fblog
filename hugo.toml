@@ -3,12 +3,12 @@ languageCode = 'en-us'
 title = "fffelipe's world wide web"
 
 [params]
-  author      = "faocp"
+  author      = "fffelipe"
   description = "what's on my mind lately?"
   currently   = [
-    "reading: anything that isn't a feed",
+    "reading: code by charles petzold",
     "tinkering: this blog, some flashcards, a camera",
-    "thinking about: what gets lost when obscurity disappears",
+    "thinking about: no thoughts, just vibes",
   ]
 
 [[menus.main]]
