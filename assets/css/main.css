@@ -136,30 +136,33 @@ hr {
   transition: color 0.3s;
 }
 
-/* ── Nav ────────────────────────────────────────────────── */
-nav {
+/* ── Display controls ───────────────────────────────────── */
+.site-controls {
+  align-items: center;
+  color: var(--muted);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 2.5rem;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 400;
+  font-size: 0.72rem;
+  gap: 0.45rem;
+  justify-content: center;
   letter-spacing: 0;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1rem;
+  margin: -0.15rem 0 2.5rem;
 }
 
-nav a { color: var(--fg); }
-nav a.active,
-nav a:hover { color: var(--accent); }
+.site-controls-label {
+  color: var(--muted);
+}
+
+.font-toggle,
+#theme-toggle {
+  background: color-mix(in srgb, var(--code-bg) 45%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
 
 .font-toggle {
   display: inline-flex;
-  margin-left: auto;
-  border: 1px solid var(--border);
-  border-radius: 999px;
   overflow: hidden;
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -168,16 +171,16 @@ nav a:hover { color: var(--accent); }
 
 .font-toggle button,
 #theme-toggle {
-  background: none;
-  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   color: var(--muted);
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .font-toggle button {
+  background: none;
+  border: none;
   font: inherit;
   padding: 0.28rem 0.45rem;
 }
@@ -187,7 +190,8 @@ nav a:hover { color: var(--accent); }
 }
 
 .font-toggle button:hover,
-.font-toggle button[aria-pressed="true"] {
+.font-toggle button[aria-pressed="true"],
+#theme-toggle:hover {
   background: var(--code-bg);
   color: var(--fg);
 }
@@ -197,15 +201,20 @@ nav a:hover { color: var(--accent); }
 }
 
 #theme-toggle {
-  padding: 0;
+  border: 1px solid var(--border);
+  font: inherit;
+  gap: 0.3rem;
+  line-height: 1;
+  padding: 0.28rem 0.5rem;
 }
-#theme-toggle:hover { color: var(--fg); }
+
+#theme-toggle:hover { border-color: var(--accent); }
 #theme-toggle svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
   fill: none;
-  stroke-width: 1.5;
+  stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -242,9 +251,15 @@ nav a:hover { color: var(--accent); }
 }
 
 .home-links {
+  align-items: center;
   border: 0;
   display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  gap: 0.75rem;
   justify-content: center;
+  letter-spacing: 0;
   margin: 1.5rem 0 0;
   padding: 0;
 }
@@ -644,14 +659,15 @@ footer a:hover { color: var(--accent); }
 @media (max-width: 480px) {
   body { padding: 1.25rem 1rem 3rem; }
   .ascii-art pre { font-size: 0.7rem; }
-  nav {
-    column-gap: 0.45rem;
-    font-size: 0.78rem;
-    row-gap: 0.6rem;
+  .site-controls {
+    column-gap: 0.4rem;
+    font-size: 0.68rem;
+    row-gap: 0.5rem;
   }
   .font-toggle { font-size: 0.6rem; }
   .font-toggle button { padding: 0.22rem 0.3rem; }
-  #theme-toggle svg { height: 16px; width: 16px; }
+  #theme-toggle { padding: 0.22rem 0.4rem; }
+  #theme-toggle svg { height: 13px; width: 13px; }
   h1 { font-size: 1.2rem; }
   .post-header h1 { font-size: 1.3rem; }
   .home-hero h1 { font-size: 1.2rem; }
