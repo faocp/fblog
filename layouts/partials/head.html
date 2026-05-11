@@ -3,6 +3,8 @@
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" type="image/png" sizes="128x128" href="{{ "favicon.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "favicon.png" | relURL }}">
 <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f5f5f0" media="(prefers-color-scheme: light)">
 
@@ -22,19 +24,13 @@
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
-{{/* Inline theme detection — runs before paint to avoid flash */}}
+{{/* Inline theme detection: runs before paint to avoid flash */}}
 <script>
   (function() {
     var savedTheme = null;
-    var savedFont = null;
-    try {
-      savedTheme = localStorage.getItem('theme');
-      savedFont = localStorage.getItem('font');
-    } catch (e) {}
+    try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var theme = savedTheme || (prefersDark ? 'dark' : 'light');
-    var font = ['mono', 'sans', 'pixel'].indexOf(savedFont) > -1 ? savedFont : 'mono';
     document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.setAttribute('data-font', font);
   })();
 </script>

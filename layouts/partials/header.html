@@ -1,4 +1,5 @@
 <header>
+  <button id="theme-toggle" type="button" aria-label="toggle theme" title="toggle theme"></button>
   <div class="ascii-art">
     <a href="{{ "/" | relURL }}" aria-label="home"><pre aria-hidden="true">
 ╭────────────────────────────────────────╮
@@ -9,32 +10,17 @@
 │                                        │
 ╰────────────────────────────────────────╯</pre></a>
   </div>
-  <div class="site-controls" role="group" aria-label="display preferences">
-    <span class="site-controls-label">view</span>
-    <div class="font-toggle" role="group" aria-label="font">
-      <button type="button" data-font-option="mono" aria-pressed="false" title="use Geist Mono">mono</button>
-      <button type="button" data-font-option="sans" aria-pressed="false" title="use Geist Sans">sans</button>
-      <button type="button" data-font-option="pixel" aria-pressed="false" title="use Geist Pixel">pixel</button>
-    </div>
-    <button id="theme-toggle" type="button" aria-label="toggle theme" title="toggle theme">
-      <span class="theme-toggle-icon" aria-hidden="true"></span>
-      <span class="theme-toggle-label"></span>
-    </button>
-  </div>
 </header>
 <script>
   (function() {
     // theme toggle
     var btn = document.getElementById('theme-toggle');
-    var moonSVG = '<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-    var sunSVG = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
-    var themeIcon = btn ? btn.querySelector('.theme-toggle-icon') : null;
-    var themeLabel = btn ? btn.querySelector('.theme-toggle-label') : null;
+    var moonSVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    var sunSVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
     function updateToggle() {
-      if (!btn || !themeIcon || !themeLabel) return;
+      if (!btn) return;
       var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      themeIcon.innerHTML = dark ? sunSVG : moonSVG;
-      themeLabel.textContent = dark ? 'dark' : 'light';
+      btn.innerHTML = dark ? sunSVG : moonSVG;
       btn.setAttribute('aria-label', dark ? 'current theme: dark. switch to light' : 'current theme: light. switch to dark');
       btn.setAttribute('title', dark ? 'switch to light theme' : 'switch to dark theme');
     }
@@ -45,25 +31,6 @@
       try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
       updateToggle();
     });
-
-    // font toggle
-    var fontButtons = document.querySelectorAll('[data-font-option]');
-    function updateFonts() {
-      var activeFont = document.documentElement.getAttribute('data-font') || 'mono';
-      for (var i = 0; i < fontButtons.length; i++) {
-        var isActive = fontButtons[i].getAttribute('data-font-option') === activeFont;
-        fontButtons[i].setAttribute('aria-pressed', isActive ? 'true' : 'false');
-      }
-    }
-    updateFonts();
-    for (var i = 0; i < fontButtons.length; i++) {
-      fontButtons[i].addEventListener('click', function() {
-        var font = this.getAttribute('data-font-option');
-        document.documentElement.setAttribute('data-font', font);
-        try { localStorage.setItem('font', font); } catch (e) {}
-        updateFonts();
-      });
-    }
 
     // ascii star twinkle
     var chars = ['*', '\u00b7', '+', '\u02da', '\u2726'];
@@ -78,6 +45,84 @@
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion) {
       setInterval(twinkle, 900);
+    }
+
+    // homepage starfield interaction
+    function initHomeStars() {
+      var fields = document.querySelectorAll('.home-stars');
+      for (var i = 0; i < fields.length; i++) {
+        createStarfield(fields[i]);
+      }
+    }
+
+    function createStarfield(field) {
+      var text = field.textContent;
+      var glyphs = [];
+      field.textContent = '';
+      field.classList.add('is-interactive');
+
+      for (var i = 0; i < text.length; i++) {
+        var char = text.charAt(i);
+        if (/\S/.test(char)) {
+          var span = document.createElement('span');
+          span.className = 'home-star';
+          span.textContent = char;
+          span.style.setProperty('--delay', (Math.random() * 2).toFixed(2) + 's');
+          field.appendChild(span);
+          glyphs.push(span);
+        } else {
+          field.appendChild(document.createTextNode(char));
+        }
+      }
+
+      if (reduceMotion) return;
+
+      var frame = null;
+      function resetGlyphs() {
+        for (var i = 0; i < glyphs.length; i++) {
+          glyphs[i].style.removeProperty('transform');
+          glyphs[i].style.removeProperty('color');
+          glyphs[i].style.removeProperty('opacity');
+          glyphs[i].style.removeProperty('text-shadow');
+        }
+      }
+
+      function reactToPointer(event) {
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(function() {
+          for (var i = 0; i < glyphs.length; i++) {
+            var rect = glyphs[i].getBoundingClientRect();
+            var dx = (rect.left + rect.width / 2) - event.clientX;
+            var dy = (rect.top + rect.height / 2) - event.clientY;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            var power = Math.max(0, 1 - dist / 95);
+            if (power === 0) {
+              glyphs[i].style.removeProperty('transform');
+              glyphs[i].style.removeProperty('color');
+              glyphs[i].style.removeProperty('opacity');
+              glyphs[i].style.removeProperty('text-shadow');
+              continue;
+            }
+            var angle = Math.atan2(dy, dx);
+            var x = Math.cos(angle) * power * 14;
+            var y = Math.sin(angle) * power * 10;
+            glyphs[i].style.transform = 'translate(' + x.toFixed(2) + 'px, ' + y.toFixed(2) + 'px) scale(' + (1 + power * 0.65).toFixed(2) + ')';
+            glyphs[i].style.color = 'var(--accent)';
+            glyphs[i].style.opacity = String(0.65 + power * 0.35);
+            glyphs[i].style.textShadow = '0 0 ' + (6 + power * 14).toFixed(0) + 'px currentColor';
+          }
+        });
+      }
+
+      field.addEventListener('pointermove', reactToPointer);
+      field.addEventListener('pointerleave', resetGlyphs);
+      field.addEventListener('pointerdown', reactToPointer);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHomeStars);
+    } else {
+      initHomeStars();
     }
   })();
 </script>
