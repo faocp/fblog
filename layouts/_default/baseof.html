@@ -5,7 +5,6 @@
 </head>
 {{ $bodyClasses := slice }}
 {{ with .Section }}{{ $bodyClasses = $bodyClasses | append (printf "section-%s" .) }}{{ end }}
-{{ with .File }}{{ if hasPrefix .Path "misc/learning" }}{{ $bodyClasses = $bodyClasses | append "section-learning" }}{{ end }}{{ end }}
 <body{{ with $bodyClasses }} class="{{ delimit . " " }}"{{ end }}>
   {{ partial "header.html" . }}
   <main>

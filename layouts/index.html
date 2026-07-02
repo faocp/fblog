@@ -13,13 +13,6 @@
 
     <h1>hi, welcome to my small corner of the web.</h1>
     {{ with .Site.Params.description }}<p>{{ . }}</p>{{ end }}
-
-    <nav class="home-links" aria-label="quick links">
-      {{ range .Site.Menus.main }}
-      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-      {{ end }}
-      <a href="{{ "index.xml" | relURL }}">rss</a>
-    </nav>
   </section>
 
   {{ with .Site.Params.currently }}

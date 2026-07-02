@@ -1,5 +1,12 @@
 {{ define "main" }}
-  <h1>404</h1>
-  <p>page not found.</p>
-  <p><a href="{{ "/" | relURL }}">← back home</a></p>
+  <section class="error-page">
+    <pre class="error-terminal" aria-hidden="true">
+$ cat requested-page
+cat: requested-page: no such file or directory
+$ echo $?
+404</pre>
+    <h1>404: page not found</h1>
+    <p>this page doesn't exist, or it moved somewhere else.</p>
+    <p><a href="{{ "/" | relURL }}">cd ~</a></p>
+  </section>
 {{ end }}

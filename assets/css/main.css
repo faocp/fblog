@@ -31,8 +31,8 @@
     --font-mono:
         "Geist Mono", ui-monospace, "SF Mono", "Fira Mono", Consolas, Menlo,
         monospace;
-    --site-font: var(--font-sans);
-    --chrome-font: var(--font-sans);
+    --site-font: var(--font-mono);
+    --chrome-font: var(--font-mono);
     --code-font: var(--font-mono);
 }
 
@@ -94,6 +94,46 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+
+/* terminal inverse-video hover for text links */
+.post-content a:hover,
+.page-content a:hover,
+.post-list a:hover,
+.post-nav a:hover,
+.all-posts-link:hover,
+.learning-back-link a:hover,
+.error-page a:hover,
+footer a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--fg);
+    color: var(--bg);
+}
+
+/* faint CRT scanlines */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0 2px,
+        rgba(0, 0, 0, 0.03) 2px 4px
+    );
+}
+[data-theme="dark"] body::after {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0 2px,
+        rgba(0, 0, 0, 0.12) 2px 4px
+    );
 }
 
 a:focus-visible,
@@ -173,6 +213,47 @@ header {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+/* ── Site nav (terminal prompt) ─────────────────────────── */
+.site-nav {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    gap: 0.35rem 0.9rem;
+    justify-content: center;
+    margin-top: 1.1rem;
+}
+
+.site-nav-prompt {
+    color: var(--muted);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.site-nav-path {
+    color: var(--accent);
+}
+
+.site-nav a {
+    color: var(--fg);
+    padding: 0 0.2rem;
+}
+
+.site-nav a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+    background: var(--fg);
+    color: var(--bg);
+}
 /* ── Homepage / post list ───────────────────────────────── */
 .home-hero {
     margin: 0 0 2.5rem;
@@ -236,36 +317,28 @@ header {
     max-width: 26rem;
 }
 
+.home-hero h1::after {
+    animation: cursor-blink 1.1s steps(2, jump-none) infinite;
+    color: var(--accent);
+    content: "▌";
+    margin-left: 0.12em;
+}
+
+@keyframes cursor-blink {
+    0%,
+    49% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
 .home-hero p {
     color: var(--fg-secondary);
     margin: 0 auto;
     max-width: 32rem;
-}
-
-.home-links {
-    align-items: center;
-    border: 0;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
-    gap: 0.75rem;
-    justify-content: center;
-    letter-spacing: 0;
-    margin: 1.5rem 0 0;
-    padding: 0;
-}
-
-.home-links a {
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--fg);
-    padding: 0.2rem 0.6rem;
-    text-decoration: none;
-}
-
-.home-links a:hover {
-    border-color: var(--accent);
-    color: var(--accent);
 }
 
 .home-now {
@@ -316,12 +389,17 @@ h4 {
 .section-heading {
     font-size: 0.8rem;
     color: var(--muted);
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 0.08em;
     font-weight: 400;
     margin: 0 0 0.75rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.4rem;
+}
+
+.section-heading::before {
+    color: var(--accent);
+    content: "$ ";
 }
 
 .post-list {
@@ -348,9 +426,6 @@ h4 {
 .post-list a {
     color: var(--fg);
     font-weight: 500;
-}
-.post-list a:hover {
-    color: var(--accent);
 }
 
 .post-date {
@@ -493,7 +568,7 @@ h4 {
 }
 
 /* ── Learning flashcards ────────────────────────────────── */
-body.section-learning {
+body.section-misc {
     max-width: 980px;
 }
 
@@ -729,6 +804,18 @@ body.section-learning {
     color: var(--accent);
 }
 
+/* ── 404 page ───────────────────────────────────────────── */
+.error-terminal {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--fg-secondary);
+    font-size: 0.82rem;
+    margin: 2rem 0 1.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
 /* ── Footer ─────────────────────────────────────────────── */
 footer {
     margin-top: 5rem;
@@ -739,9 +826,6 @@ footer {
 }
 footer a {
     color: var(--muted);
-}
-footer a:hover {
-    color: var(--accent);
 }
 
 /* ── Motion preferences ─────────────────────────────────── */
@@ -788,12 +872,13 @@ footer a:hover {
     .home-stars {
         font-size: 0.72rem;
     }
-    .home-links {
-        gap: 0.45rem;
-        justify-content: center;
+    .site-nav {
+        font-size: 0.78rem;
+        gap: 0.3rem 0.7rem;
     }
-    .home-links a {
-        padding: 0.18rem 0.5rem;
+    .site-nav-prompt {
+        flex-basis: 100%;
+        text-align: center;
     }
     .cats {
         margin-left: 0;

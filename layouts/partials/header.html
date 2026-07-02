@@ -10,6 +10,14 @@
 │                                        │
 ╰────────────────────────────────────────╯</pre></a>
   </div>
+  {{ $path := strings.TrimSuffix "/" .RelPermalink }}
+  <nav class="site-nav" aria-label="main navigation">
+    <span class="site-nav-prompt" aria-hidden="true">fffelipe@www:<span class="site-nav-path">~{{ $path }}</span>$</span>
+    <a href="{{ "/" | relURL }}"{{ if .IsHome }} aria-current="page"{{ end }}>~</a>
+    {{ range site.Menus.main }}
+    <a href="{{ .URL | relURL }}"{{ if hasPrefix $.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
 </header>
 <script>
   (function() {
