@@ -5,7 +5,9 @@ draft      = false
 categories = ["life"]
 +++
 
-it's summer, so i feel strangely compelled to seasonally update this blog. as i'm writing, it's canada day, 30ºC+ outside, 10pm. it's been a good summer i believe, as good as any, and i'm already sure i'll miss it. anyway, i'm afraid of being more specific and vulnerable on the internet, so here's a very short assortment of links that are interesting to me, so they might be interesting to you? i won't bore you with explanations or reasons why i'm dropping these here, but please come to your conclusions if you wish to do so.
+it's summer, so i feel strangely compelled to seasonally update this blog. as i'm writing, it's canada day, 30ºC+ outside, 10pm. it's been a good summer i believe, as good as any, and i'm already sure i'll miss it. i'm quite drawn to nostalgia, but as i think back, very few of my happiest childhood memories were made in the summer (or at least did not involve summer activities). i do remember meeting the red power ranger on my way to the beach when i was 7 or 8.
+
+anyway, i'm afraid of being more specific and vulnerable on the internet, so here's a very short assortment of links that are interesting to me, so they might be interesting to you? i won't bore you with explanations or reasons why i'm dropping these here, but please come to your conclusions if you wish to do so.
 
 [Why I Left Harry’s All-Night Hamburgers](https://escapepod.org/2013/09/14/ep413-why-i-left-harrys-all-night-hamburgers/)
 
