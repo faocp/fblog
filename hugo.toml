@@ -17,11 +17,6 @@ title = "fffelipe's world wide web"
   weight = 1
 
 [[menus.main]]
-  name   = "misc"
-  url    = "/misc/"
-  weight = 2
-
-[[menus.main]]
   name   = "links"
   url    = "/links/"
   weight = 3
