@@ -5,13 +5,12 @@
     data-iterations="{{ .Params.iterations }}"
     data-ciphertext="{{ .Params.ciphertext }}">
     <pre class="error-terminal" aria-hidden="true">$ cat resume
-cat: resume: permission denied</pre>
+resume: encrypted, password required</pre>
     <form id="resume-unlock-form" class="resume-prompt" autocomplete="off">
-      <label for="resume-password" class="resume-prompt-label">
-        <span class="site-nav-prompt">fffelipe@www:~/resume$</span> enter password<span class="resume-cursor" aria-hidden="true">▌</span>
-      </label>
+      <label for="resume-password" class="resume-prompt-label">password</label>
       <div class="resume-prompt-row">
-        <input id="resume-password" name="password" type="password" autocomplete="current-password" spellcheck="false" required>
+        <span class="site-nav-prompt" aria-hidden="true">fffelipe@www:~/resume$</span>
+        <input id="resume-password" name="password" type="password" autocomplete="current-password" spellcheck="false" placeholder="password" required>
         <button type="submit">unlock</button>
       </div>
     </form>

@@ -26,6 +26,11 @@ title = "fffelipe's world wide web"
   url    = "/about/"
   weight = 4
 
+[[menus.main]]
+  name   = "resume"
+  url    = "/resume/"
+  weight = 5
+
 [markup.goldmark.renderer]
   # Content is authored locally/trusted; this permits intentional inline HTML in Markdown.
   unsafe = true

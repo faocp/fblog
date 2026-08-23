@@ -827,34 +827,40 @@ body.section-misc {
 }
 
 .resume-prompt-label {
-    display: block;
-    margin-bottom: 0.75rem;
-}
-
-.resume-cursor {
-    animation: cursor-blink 1.1s steps(2, jump-none) infinite;
-    color: var(--accent);
-    margin-left: 0.12em;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .resume-prompt-row {
+    align-items: center;
     display: flex;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 #resume-password {
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    caret-color: var(--accent);
     color: var(--fg);
     flex: 1;
     font: inherit;
-    padding: 0.5rem 0.7rem;
+    min-width: 10ch;
+    padding: 0.3rem 0.1rem;
+}
+
+#resume-password::placeholder {
+    color: var(--muted);
 }
 
 #resume-password:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
+    border-bottom-color: var(--accent);
+    outline: none;
 }
 
 .resume-prompt-row button {
