@@ -1,0 +1,74 @@
+{{ define "main" }}
+  <section class="resume-gate"
+    data-salt="{{ .Params.salt }}"
+    data-iv="{{ .Params.iv }}"
+    data-iterations="{{ .Params.iterations }}"
+    data-ciphertext="{{ .Params.ciphertext }}">
+    <pre class="error-terminal" aria-hidden="true">$ cat resume
+cat: resume: permission denied</pre>
+    <form id="resume-unlock-form" class="resume-prompt" autocomplete="off">
+      <label for="resume-password" class="resume-prompt-label">
+        <span class="site-nav-prompt">fffelipe@www:~/resume$</span> enter password<span class="resume-cursor" aria-hidden="true">▌</span>
+      </label>
+      <div class="resume-prompt-row">
+        <input id="resume-password" name="password" type="password" autocomplete="current-password" spellcheck="false" required>
+        <button type="submit">unlock</button>
+      </div>
+    </form>
+    <p id="resume-error" class="resume-error" role="alert" hidden>bash: permission denied: incorrect password</p>
+    <div id="resume-content" class="post-content" hidden></div>
+  </section>
+  <script>
+    (function () {
+      var section = document.querySelector('.resume-gate');
+      var form = document.getElementById('resume-unlock-form');
+      var input = document.getElementById('resume-password');
+      var errorEl = document.getElementById('resume-error');
+      var contentEl = document.getElementById('resume-content');
+
+      function b64ToBytes(b64) {
+        var bin = window.atob(b64);
+        var bytes = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        return bytes;
+      }
+
+      function unlock(password) {
+        var enc = new TextEncoder();
+        var salt = b64ToBytes(section.dataset.salt);
+        var iv = b64ToBytes(section.dataset.iv);
+        var iterations = parseInt(section.dataset.iterations, 10);
+        var ciphertext = b64ToBytes(section.dataset.ciphertext);
+
+        return window.crypto.subtle.importKey(
+          'raw', enc.encode(password), { name: 'PBKDF2' }, false, ['deriveKey']
+        ).then(function (keyMaterial) {
+          return window.crypto.subtle.deriveKey(
+            { name: 'PBKDF2', salt: salt, iterations: iterations, hash: 'SHA-256' },
+            keyMaterial,
+            { name: 'AES-GCM', length: 256 },
+            false,
+            ['decrypt']
+          );
+        }).then(function (key) {
+          return window.crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, ciphertext);
+        }).then(function (plaintext) {
+          contentEl.innerHTML = new TextDecoder().decode(plaintext);
+          contentEl.hidden = false;
+          form.hidden = true;
+          errorEl.hidden = true;
+        });
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        errorEl.hidden = true;
+        unlock(input.value).catch(function () {
+          errorEl.hidden = false;
+          input.value = '';
+          input.focus();
+        });
+      });
+    })();
+  </script>
+{{ end }}

@@ -816,6 +816,70 @@ body.section-misc {
     padding: 1rem;
 }
 
+/* ── Resume password gate ───────────────────────────────── */
+.resume-gate {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.resume-prompt {
+    margin-top: 1.5rem;
+}
+
+.resume-prompt-label {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.resume-cursor {
+    animation: cursor-blink 1.1s steps(2, jump-none) infinite;
+    color: var(--accent);
+    margin-left: 0.12em;
+}
+
+.resume-prompt-row {
+    display: flex;
+    gap: 0.6rem;
+}
+
+#resume-password {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--fg);
+    flex: 1;
+    font: inherit;
+    padding: 0.5rem 0.7rem;
+}
+
+#resume-password:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.resume-prompt-row button {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--fg);
+    cursor: pointer;
+    font: inherit;
+    padding: 0.5rem 1rem;
+}
+
+.resume-prompt-row button:hover,
+.resume-prompt-row button:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+}
+
+.resume-error {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
 /* ── Footer ─────────────────────────────────────────────── */
 footer {
     margin-top: 5rem;
