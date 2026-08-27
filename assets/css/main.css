@@ -15,6 +15,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Noto Serif";
+    src: url("../fonts/noto-serif/NotoSerif-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Noto Serif";
+    src: url("../fonts/noto-serif/NotoSerif-Italic-Variable.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 /* ── Variables ─────────────────────────────────────────── */
 :root {
     color-scheme: light;
@@ -31,6 +47,9 @@
     --font-mono:
         "Geist Mono", ui-monospace, "SF Mono", "Fira Mono", Consolas, Menlo,
         monospace;
+    --font-serif:
+        "Noto Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+        serif;
     --site-font: var(--font-mono);
     --chrome-font: var(--font-mono);
     --code-font: var(--font-mono);
@@ -481,6 +500,8 @@ h4 {
 }
 
 .post-content {
+    font-family: var(--font-serif);
+    font-size: 1rem;
     margin-top: 1.5rem;
 }
 
