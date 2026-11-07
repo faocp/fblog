@@ -1,24 +1,12 @@
 <header>
-  <button id="theme-toggle" type="button" aria-label="toggle theme" title="toggle theme"></button>
-  <a class="site-title" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }}"><pre class="site-art" aria-hidden="true">oooooooo::::::: : . . . . . .   .           . . . . . . . : ::::::::oooooooo
-oooooo : : : : . .                                   . . : : : : : : : : : :
-oo::: : :<b>▄▄▄</b>. . <b>▄▄▄</b> . .<b>▄▄▄</b>.   .      <b>▄▄▄</b>      <b>▄</b> . . . . . . : : : : : : : : 
- : :   :<b>██</b> : . <b>█▄</b>  .  <b>█</b>                <b>█</b>      <b>▀</b>            .   .   .   : : :
-:::::::<b>▀██▀▀</b>::<b>▀██▀▀</b> .<b>▀██▀▀</b>. <b>▄██▀██▄</b> .  <b>█</b>.   <b>▀██</b> . .<b>██▄▀▀██▄</b> . <b>▄█▀▀█▄</b>:::::ooo
-oo ooo :<b>██</b> : : <b>█</b> : : .<b>█</b>  . <b>▄█</b>     <b>█▄</b>   <b>█</b>      <b>█</b>    <b>██</b>    .<b>██</b> <b>█▀</b>: : <b>▀█</b>: ooooo
-oooooooo<b>██</b>::: :<b>█</b>: : . <b>█</b> . .<b>████████▀</b>   <b>█</b>      <b>█</b>   .<b>██</b> . . <b>██</b>:<b>████████</b>ooooooo
-oooo ooo<b>██</b> : : <b>█</b>   .  <b>█</b>    <b>▀█▄</b>    <b>▄▄</b>   <b>█</b>      <b>█</b>    <b>██</b>  . <b>▄█▀</b> <b>▀▄</b>: : <b>▄▄</b>o o ooo
-oooooo::<b>▀▀</b>: : .<b>█</b>. . . <b>█</b> . . .<b>▀███▀▀</b> .<b>█████</b>  <b>█████</b> .<b>██▀███▀</b>: ::<b>▀████▀▀</b>:::::::
-oo : : : .   .   .   .                             <b>██</b>.   . : : : : : : : : :
-: : . : : : : . . . . . . . . .               . . . . . . . . . . . . : : ::
- : : : : : : : : : .   .                                       . : : : : ooo</pre><span class="site-title-sub" aria-hidden="true">world wide web</span></a>
   {{ $path := strings.TrimSuffix "/" .RelPermalink }}
   <nav class="site-nav" aria-label="main navigation">
     <span class="site-nav-prompt" aria-hidden="true">fffelipe@www:<span class="site-nav-path">~{{ $path }}</span>$</span>
-    <a href="{{ "/" | relURL }}"{{ if .IsHome }} aria-current="page"{{ end }}>~</a>
+    <a href="{{ "/" | relURL }}" aria-label="home"{{ if .IsHome }} aria-current="page"{{ end }}>~</a>
     {{ range site.Menus.main }}
     <a href="{{ .URL | relURL }}"{{ if hasPrefix $.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a>
     {{ end }}
+    <button id="theme-toggle" type="button" aria-label="toggle theme" title="toggle theme"></button>
   </nav>
 </header>
 <script>

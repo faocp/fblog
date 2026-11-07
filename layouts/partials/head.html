@@ -24,7 +24,7 @@
 
 {{/* Preload the fonts used above the fold */}}
 <link rel="preload" href="{{ "fonts/geist/Geist-Variable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ "fonts/geist/GeistPixel-Square.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/geist/GeistMono-Variable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 
 {{/* CSS with fingerprint for cache busting */}}
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
