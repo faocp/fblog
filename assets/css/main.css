@@ -23,6 +23,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Geist Serif";
+    src: url("../fonts/geist/GeistSerif-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 /* ── Variables ─────────────────────────────────────────── */
 :root {
     color-scheme: light;
@@ -39,6 +47,9 @@
     --font-mono:
         "Geist Mono", ui-monospace, "SF Mono", "Fira Mono", Consolas, Menlo,
         monospace;
+    --font-serif:
+        "Geist Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+        serif;
     --font-pixel: "Geist Pixel", var(--font-mono);
 }
 
@@ -437,6 +448,7 @@ h4 {
 }
 
 .post-content {
+    font-family: var(--font-serif);
     font-size: 1.05rem;
     line-height: 1.75;
     margin-inline: auto;
