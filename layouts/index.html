@@ -7,6 +7,15 @@
     {{ with .Site.Params.description }}<p>{{ . }}</p>{{ end }}
   </section>
 
+  {{ with .Site.Params.currently }}
+  <aside class="callout callout-now" aria-label="currently">
+    <span class="callout-label">now</span>
+    <ul>
+      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+    </ul>
+  </aside>
+  {{ end }}
+
   {{ if $recentPosts }}
   <section class="home-recent" aria-label="recent notes">
     <h2 class="section-heading"><span>latest notes</span></h2>
@@ -17,14 +26,5 @@
     <p class="all-posts"><a class="all-posts-link" href="{{ "posts/" | relURL }}">all notes →</a></p>
     {{ end }}
   </section>
-  {{ end }}
-
-  {{ with .Site.Params.currently }}
-  <aside class="callout callout-now" aria-label="currently">
-    <span class="callout-label">now</span>
-    <ul>
-      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
-    </ul>
-  </aside>
   {{ end }}
 {{ end }}

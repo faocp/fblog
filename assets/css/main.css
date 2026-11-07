@@ -289,8 +289,8 @@ h4 {
 }
 
 .home-hero h1 {
-    font-size: 2.1rem;
-    letter-spacing: -0.03em;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
     line-height: 1.15;
     margin: 0 auto 0.75rem;
     max-width: 24rem;
@@ -569,76 +569,6 @@ h4 {
     padding: 1rem;
 }
 
-/* ── Resume password gate ───────────────────────────────── */
-.resume-gate {
-    margin: 0 auto;
-    max-width: 680px;
-}
-
-.resume-prompt {
-    margin-top: 1.5rem;
-}
-
-.resume-prompt-label {
-    clip: rect(0 0 0 0);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-.resume-prompt-row {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-#resume-password {
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--border);
-    caret-color: var(--accent);
-    color: var(--fg);
-    flex: 1;
-    font: inherit;
-    min-width: 10ch;
-    padding: 0.3rem 0.1rem;
-}
-
-#resume-password::placeholder {
-    color: var(--muted);
-}
-
-#resume-password:focus-visible {
-    border-bottom-color: var(--accent);
-    outline: none;
-}
-
-.resume-prompt-row button {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--fg);
-    cursor: pointer;
-    font: inherit;
-    padding: 0.5rem 1rem;
-}
-
-.resume-prompt-row button:hover,
-.resume-prompt-row button:focus-visible {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg);
-}
-
-.resume-error {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-top: 1rem;
-}
-
 /* ── Footer ─────────────────────────────────────────────── */
 footer {
     color: var(--muted);
@@ -664,7 +594,7 @@ footer a {
         font-size: 1.6rem;
     }
     .home-hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     .site-nav {
         font-size: 0.78rem;

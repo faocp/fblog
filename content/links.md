@@ -14,3 +14,5 @@ date  = "2026-01-01"
 ## something i've made
 
 [retrodithering](https://faocp.github.io/retrodithering/) is a project I started to learn some coding concepts, made in honour of the late Bill Atkinson.
+
+[artstamps](https://artstamps.fffelipe.com/) is another one of my projects.
