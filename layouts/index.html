@@ -20,7 +20,7 @@
   <section class="home-recent" aria-label="recent notes">
     <h2 class="section-heading"><span>latest notes</span></h2>
     <ul class="post-list">
-      {{ range $recentPosts }}{{ partial "post-row.html" (dict "page" .) }}{{ end }}
+      {{ range $recentPosts }}{{ partial "post-row.html" (dict "page" . "kind" true) }}{{ end }}
     </ul>
     {{ if gt (len $posts) 3 }}
     <p class="all-posts"><a class="all-posts-link" href="{{ "posts/" | relURL }}">all notes →</a></p>

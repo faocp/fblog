@@ -1,11 +1,13 @@
-{{/* One row of a post list: title ···· date, optional categories underneath.
-     Call with (dict "page" . "cats" true). */}}
+{{/* One row of a post list: title [tags] ···· date, all on one line.
+     Call with (dict "page" . "cats" true "kind" true). "kind" marks scratchpad
+     notes (front matter: scratch = true) with a chip; leave it off where the list is already grouped by kind. */}}
 {{ $p := .page }}
 <li class="post-row">
   <a class="post-row-title" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+  <span class="tags">
+    {{ if and .kind $p.Params.scratch }}<span class="cat cat-note" title="scratchpad note">scratch</span>{{ end }}
+    {{ if .cats }}{{ range $p.Params.categories }}<a class="cat" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}{{ end }}
+  </span>
   <span class="post-row-leader" aria-hidden="true"></span>
   <time class="post-date" datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006-01-02" }}</time>
-  {{ if .cats }}{{ with $p.Params.categories }}
-  <span class="cats">{{ range . }}<a class="cat" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}</span>
-  {{ end }}{{ end }}
 </li>

@@ -1,7 +1,29 @@
 {{ define "main" }}
   <h1 class="page-title">{{ .Title }}</h1>
   {{ with .Content }}<div class="page-content">{{ . }}</div>{{ end }}
+  {{ if eq .Section "posts" }}
+    {{/* posts are fleshed-out ideas; notes (scratch = true) are scratchpad thoughts */}}
+    {{ $notes := where .Pages "Params.scratch" true }}
+    {{ $posts := where .Pages "Params.scratch" "ne" true }}
+    {{ with $posts }}
+    <section class="post-group" aria-label="posts">
+      <h2 class="section-heading"><span>posts</span></h2>
+      <ul class="post-list">
+        {{ range . }}{{ partial "post-row.html" (dict "page" . "cats" true) }}{{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ with $notes }}
+    <section class="post-group" aria-label="scratchpad">
+      <h2 class="section-heading"><span>scratchpad</span></h2>
+      <ul class="post-list">
+        {{ range . }}{{ partial "post-row.html" (dict "page" . "cats" true) }}{{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  {{ else }}
   <ul class="post-list">
-    {{ range .Pages }}{{ partial "post-row.html" (dict "page" . "cats" true) }}{{ end }}
+    {{ range .Pages }}{{ partial "post-row.html" (dict "page" . "cats" true "kind" true) }}{{ end }}
   </ul>
+  {{ end }}
 {{ end }}

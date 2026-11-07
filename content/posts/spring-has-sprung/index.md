@@ -3,6 +3,7 @@ title      = "spring has sprung?!"
 date       = "2026-03-24"
 draft      = false
 categories = ["life"]
+scratch    = true
 +++
 
 testing, testing, 1, 2.

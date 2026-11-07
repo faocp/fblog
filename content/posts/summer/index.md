@@ -3,6 +3,7 @@ title      = "it's 30ºC outside and this is what my brain cooked"
 date       = "2026-07-01"
 draft      = false
 categories = ["life"]
+scratch    = true
 +++
 
 it's summer, so i feel strangely compelled to seasonally update this blog. as i'm writing, it's canada day, 30ºC+ outside, 10pm. it's been a good summer i believe, as good as any, and i'm already sure i'll miss it. i'm quite drawn to nostalgia, but as i think back, very few of my happiest childhood memories were made in the summer (or at least did not involve summer activities). i do remember meeting the red power ranger on my way to the beach when i was 7 or 8.

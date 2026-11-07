@@ -1,6 +1,6 @@
 {{ define "main" }}
   <h1 class="page-title">notes tagged: {{ .Title }}</h1>
   <ul class="post-list">
-    {{ range .Pages }}{{ partial "post-row.html" (dict "page" .) }}{{ end }}
+    {{ range .Pages }}{{ partial "post-row.html" (dict "page" . "kind" true) }}{{ end }}
   </ul>
 {{ end }}
