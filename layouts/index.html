@@ -19,7 +19,7 @@
   <section class="home-now" aria-label="currently">
     <h2 class="section-heading">currently</h2>
     <ul>
-      {{ range . }}<li>{{ . }}</li>{{ end }}
+      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
     </ul>
   </section>
   {{ end }}
