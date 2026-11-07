@@ -1,13 +1,6 @@
 {{ define "main" }}
-  <h1>notes tagged: {{ .Title }}</h1>
+  <h1 class="page-title">notes tagged: {{ .Title }}</h1>
   <ul class="post-list">
-    {{ range .Pages }}
-    <li>
-      <div class="post-list-link">
-        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </div>
-    </li>
-    {{ end }}
+    {{ range .Pages }}{{ partial "post-row.html" (dict "page" .) }}{{ end }}
   </ul>
 {{ end }}

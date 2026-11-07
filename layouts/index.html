@@ -9,25 +9,18 @@
 
   {{ if $recentPosts }}
   <section class="home-recent" aria-label="recent notes">
-    <h2 class="section-heading">latest notes</h2>
+    <h2 class="section-heading"><span>latest notes</span></h2>
     <ul class="post-list">
-      {{ range $recentPosts }}
-      <li>
-        <div class="post-list-link">
-          <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </div>
-      </li>
-      {{ end }}
+      {{ range $recentPosts }}{{ partial "post-row.html" (dict "page" .) }}{{ end }}
     </ul>
     {{ if gt (len $posts) 3 }}
-    <p><a class="all-posts-link" href="{{ "posts/" | relURL }}">all notes →</a></p>
+    <p class="all-posts"><a class="all-posts-link" href="{{ "posts/" | relURL }}">all notes →</a></p>
     {{ end }}
   </section>
   {{ end }}
 
   {{ with .Site.Params.currently }}
-  <aside class="callout" aria-label="currently">
+  <aside class="callout callout-now" aria-label="currently">
     <span class="callout-label">now</span>
     <ul>
       {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}

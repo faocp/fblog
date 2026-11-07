@@ -1,6 +1,17 @@
 <header>
   <button id="theme-toggle" type="button" aria-label="toggle theme" title="toggle theme"></button>
-  <a class="site-title" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  <a class="site-title" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }}"><pre class="site-art" aria-hidden="true">oooooooo::::::: : . . . . . .   .           . . . . . . . : ::::::::oooooooo
+oooooo : : : : . .                                   . . : : : : : : : : : :
+oo::: : :<b>▄▄▄</b>. . <b>▄▄▄</b> . .<b>▄▄▄</b>.   .      <b>▄▄▄</b>      <b>▄</b> . . . . . . : : : : : : : : 
+ : :   :<b>██</b> : . <b>█▄</b>  .  <b>█</b>                <b>█</b>      <b>▀</b>            .   .   .   : : :
+:::::::<b>▀██▀▀</b>::<b>▀██▀▀</b> .<b>▀██▀▀</b>. <b>▄██▀██▄</b> .  <b>█</b>.   <b>▀██</b> . .<b>██▄▀▀██▄</b> . <b>▄█▀▀█▄</b>:::::ooo
+oo ooo :<b>██</b> : : <b>█</b> : : .<b>█</b>  . <b>▄█</b>     <b>█▄</b>   <b>█</b>      <b>█</b>    <b>██</b>    .<b>██</b> <b>█▀</b>: : <b>▀█</b>: ooooo
+oooooooo<b>██</b>::: :<b>█</b>: : . <b>█</b> . .<b>████████▀</b>   <b>█</b>      <b>█</b>   .<b>██</b> . . <b>██</b>:<b>████████</b>ooooooo
+oooo ooo<b>██</b> : : <b>█</b>   .  <b>█</b>    <b>▀█▄</b>    <b>▄▄</b>   <b>█</b>      <b>█</b>    <b>██</b>  . <b>▄█▀</b> <b>▀▄</b>: : <b>▄▄</b>o o ooo
+oooooo::<b>▀▀</b>: : .<b>█</b>. . . <b>█</b> . . .<b>▀███▀▀</b> .<b>█████</b>  <b>█████</b> .<b>██▀███▀</b>: ::<b>▀████▀▀</b>:::::::
+oo : : : .   .   .   .                             <b>██</b>.   . : : : : : : : : :
+: : . : : : : . . . . . . . . .               . . . . . . . . . . . . : : ::
+ : : : : : : : : : .   .                                       . : : : : ooo</pre><span class="site-title-sub" aria-hidden="true">world wide web</span></a>
   {{ $path := strings.TrimSuffix "/" .RelPermalink }}
   <nav class="site-nav" aria-label="main navigation">
     <span class="site-nav-prompt" aria-hidden="true">fffelipe@www:<span class="site-nav-path">~{{ $path }}</span>$</span>

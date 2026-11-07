@@ -1,0 +1,11 @@
+{{/* One row of a post list: title ···· date, optional categories underneath.
+     Call with (dict "page" . "cats" true). */}}
+{{ $p := .page }}
+<li class="post-row">
+  <a class="post-row-title" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+  <span class="post-row-leader" aria-hidden="true"></span>
+  <time class="post-date" datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006-01-02" }}</time>
+  {{ if .cats }}{{ with $p.Params.categories }}
+  <span class="cats">{{ range . }}<a class="cat" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}</span>
+  {{ end }}{{ end }}
+</li>
