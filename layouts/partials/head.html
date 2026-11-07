@@ -6,8 +6,8 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" type="image/png" sizes="128x128" href="{{ "favicon.png" | relURL }}">
 <link rel="apple-touch-icon" href="{{ "favicon.png" | relURL }}">
-<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f5f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
 
 {{/* Open Graph */}}
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
@@ -21,6 +21,10 @@
 {{ with .OutputFormats.Get "rss" -}}
 <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
 {{- end }}
+
+{{/* Preload the fonts used above the fold */}}
+<link rel="preload" href="{{ "fonts/geist/Geist-Variable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/geist/GeistPixel-Square.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 
 {{/* CSS with fingerprint for cache busting */}}
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}

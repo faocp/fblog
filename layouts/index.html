@@ -3,26 +3,9 @@
   {{ $recentPosts := first 3 $posts.ByDate.Reverse }}
 
   <section class="home-hero" aria-label="home introduction">
-    <pre class="home-stars" aria-hidden="true">
-      ·           *              ·
-  *        ·              ✦
-        ·                 ·
-   ✦            ~             *
-      ·              *          ·
-    </pre>
-
     <h1>hi, welcome to my small corner of the web.</h1>
     {{ with .Site.Params.description }}<p>{{ . }}</p>{{ end }}
   </section>
-
-  {{ with .Site.Params.currently }}
-  <section class="home-now" aria-label="currently">
-    <h2 class="section-heading">currently</h2>
-    <ul>
-      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
-    </ul>
-  </section>
-  {{ end }}
 
   {{ if $recentPosts }}
   <section class="home-recent" aria-label="recent notes">
@@ -41,5 +24,14 @@
     <p><a class="all-posts-link" href="{{ "posts/" | relURL }}">all notes →</a></p>
     {{ end }}
   </section>
+  {{ end }}
+
+  {{ with .Site.Params.currently }}
+  <aside class="callout" aria-label="currently">
+    <span class="callout-label">now</span>
+    <ul>
+      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+    </ul>
+  </aside>
   {{ end }}
 {{ end }}

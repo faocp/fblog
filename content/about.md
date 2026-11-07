@@ -14,5 +14,3 @@ here are the plans for spring/summer '26:
 - also trying to remain hopeful while there's nothing in the news but the blues
 
 you can find me on [github](https://github.com/faocp).
-
-oh, and i keep [flashcards](/misc/) of things i'm learning. mostly for me, but you're welcome to poke around.
