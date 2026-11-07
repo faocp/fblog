@@ -346,8 +346,26 @@ h4 {
     font-variant-numeric: tabular-nums;
 }
 
-.post-group {
-    margin-bottom: 2.5rem;
+/* narrow screens: title gets the full width, tags and date share the line below */
+@media (max-width: 560px) {
+    .post-row {
+        align-items: baseline;
+        grid-template-columns: auto 1fr;
+        row-gap: 0.25rem;
+    }
+    .post-row-title {
+        grid-column: 1 / -1;
+    }
+    .tags {
+        margin-left: 0;
+    }
+    .post-row-leader {
+        display: none;
+    }
+    .post-date {
+        grid-column: 2;
+        justify-self: end;
+    }
 }
 
 .cat {
@@ -357,10 +375,6 @@ h4 {
     font-size: 0.72rem;
     padding: 0.05rem 0.4rem;
     text-decoration: none;
-}
-.cat-note {
-    border-style: dashed;
-    cursor: help;
 }
 .cat:hover {
     border-color: var(--fg);
