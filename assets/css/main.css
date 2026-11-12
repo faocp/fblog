@@ -27,7 +27,7 @@
     font-family: "Geist Serif";
     src: url("../fonts/geist/GeistSerif-Variable.woff2") format("woff2");
     font-style: normal;
-    font-weight: 100 900;
+    font-weight: 400; /* no wght axis: declaring 400 lets the browser synthesize bold */
     font-display: swap;
 }
 
