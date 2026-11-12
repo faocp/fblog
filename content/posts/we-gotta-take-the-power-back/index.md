@@ -42,5 +42,6 @@ Finally, an easier one to tackle: people need to be able to choose when and how 
 This is the nuance piece I mentioned earlier; every individual can and will have different lines when interacting with AI. I, for example, draw my line at art - I believe art is fundamentally human and should never be conceptualized by AI, and if it is, I need to be able to choose not to engage with it. There should never be misrepresentation, misdirection or disinformation when engaging with AI-created (or assisted) content.
 
 As I said, big problems requiring immense societal action and global cooperation, but we need to start somewhere. My recommendation on where to start? Someone needs to tell Dario this is the only way his "[Machines of Loving Grace](https://darioamodei.com/essay/machines-of-loving-grace)" come to fruition.
+
 > [!NOTE] edit
 > saturday, november 7th 2026: an earlier version of this page was titled "we gotta take the power back: part 1". months later, I cringed at this title and changed it to "controlling the spice".
