@@ -18,6 +18,7 @@
     function updateToggle() {
       if (!btn) return;
       var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#0a0a0a' : '#fafafa';
       btn.innerHTML = dark ? sunSVG : moonSVG;
       btn.setAttribute('aria-label', dark ? 'current theme: dark. switch to light' : 'current theme: light. switch to dark');
       btn.setAttribute('title', dark ? 'switch to light theme' : 'switch to dark theme');

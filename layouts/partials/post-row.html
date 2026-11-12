@@ -3,9 +3,8 @@
 {{ $p := .page }}
 <li class="post-row">
   <a class="post-row-title" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
-  <span class="tags">
-    {{ if .cats }}{{ range $p.Params.categories }}<a class="cat" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}{{ end }}
-  </span>
+  {{/* keep the span free of whitespace so .tags:empty matches in dev too */}}
+  <span class="tags">{{- if .cats }}{{ range $p.GetTerms "categories" }}<a class="cat" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end -}}</span>
   <span class="post-row-leader" aria-hidden="true"></span>
   <time class="post-date" datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006-01-02" }}</time>
 </li>

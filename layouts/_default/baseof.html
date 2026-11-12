@@ -3,9 +3,7 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-{{ $bodyClasses := slice }}
-{{ with .Section }}{{ $bodyClasses = $bodyClasses | append (printf "section-%s" .) }}{{ end }}
-<body{{ with $bodyClasses }} class="{{ delimit . " " }}"{{ end }}>
+<body>
   {{ partial "header.html" . }}
   <main>
     {{ block "main" . }}{{ end }}

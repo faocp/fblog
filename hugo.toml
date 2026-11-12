@@ -1,6 +1,8 @@
 baseURL = 'https://fffelipe.com/'
 languageCode = 'en-us'
 title = "fffelipe's world wide web"
+# Keep auto-generated titles (category terms, taxonomy lists) lowercase, like the rest of the site.
+titleCaseStyle = "none"
 
 [params]
   author      = "fffelipe"
@@ -10,6 +12,10 @@ title = "fffelipe's world wide web"
     "tinkering: <a href=\"https://artstamps.fffelipe.com/\">artstamps</a>, this blog, a camera",
     "thinking about: no thoughts, just vibes",
   ]
+
+# Only categories: listing them here turns off Hugo's default (unused) tags taxonomy.
+[taxonomies]
+  category = "categories"
 
 [[menus.main]]
   name   = "notes"

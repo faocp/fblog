@@ -5,8 +5,8 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" type="image/png" sizes="128x128" href="{{ "favicon.png" | relURL }}">
 <link rel="apple-touch-icon" href="{{ "favicon.png" | relURL }}">
-<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+{{/* set to the active theme by the scripts below and in header.html */}}
+<meta name="theme-color" content="#fafafa">
 
 {{/* Open Graph */}}
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
@@ -16,10 +16,10 @@
 <meta property="og:image" content="{{ "favicon.png" | absURL }}">
 {{ if .IsPage }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
 
-{{/* RSS autodiscovery */}}
-{{ with .OutputFormats.Get "rss" -}}
-<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
-{{- end }}
+{{/* RSS autodiscovery: the posts feed, since the home feed also lists about/links */}}
+{{ with site.GetPage "/posts" }}{{ with .OutputFormats.Get "rss" -}}
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
+{{- end }}{{ end }}
 
 {{/* Preload the fonts used above the fold */}}
 <link rel="preload" href="{{ "fonts/geist/Geist-Variable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
@@ -37,5 +37,6 @@
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var theme = savedTheme || (prefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', theme);
+    document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0a0a0a' : '#fafafa';
   })();
 </script>
