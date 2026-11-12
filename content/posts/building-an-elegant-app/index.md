@@ -2,7 +2,7 @@
 title      = "building an elegant app"
 date       = "2026-11-11"
 draft      = false
-categories = ["art", "scratchpad"]
+categories = ["art", "tech"]
 +++
 
 i've been working on [artstamps](https://artstamps.fffelipe.com/#/today), it's a silly little project that shows one artwork a day from open museum collections (V&A, Art Institute of Chicago, Cleveland, SMK, Rijksmuseum), styled as a postage stamp. It ships as a website and as an iPhone app with widgets. I'm specially proud of the duo implementation, it looks really neat!
